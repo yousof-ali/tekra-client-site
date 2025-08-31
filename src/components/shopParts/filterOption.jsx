@@ -22,7 +22,7 @@ const FilterSideBar = () => {
               <div className="flex gap-2 items-center">
                 <Checkbox
                   id={category}
-                  className="border-black data-[state=checked]:bg-[#1867d6]"
+                  className="border-black data-[state=checked]:bg-[#276680]"
                 />
                 <label htmlFor={category} className="text-xs">
                   {category}
@@ -49,7 +49,7 @@ const FilterSideBar = () => {
             <div key={brand} className="flex gap-2 items-center">
               <Checkbox
                 id={`brand-${brand}`}
-                className="border-black data-[state=checked]:bg-[#1867d6]"
+                className="border-black data-[state=checked]:bg-[#276680]"
               />
               <label htmlFor={`brand-${brand}`} className="text-xs">
                 {brand}
@@ -89,7 +89,7 @@ const FilterSideBar = () => {
             <div key={s} className="flex gap-2 items-center">
               <Checkbox
                 id={`size-${s}`}
-                className="border-black  data-[state=checked]:bg-[#1867d6]"
+                className="border-black  data-[state=checked]:bg-[#276680]"
               />
               <label htmlFor={`size-${s}`} className="text-xs">
                 {s}

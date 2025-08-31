@@ -21,7 +21,7 @@ import Link from "next/link";
 
 const Menubar = () => {
   return (
-    <div className="bg-[#1867d6] hidden lg:block">
+    <div className="bg-[#276680] hidden lg:block">
       <div className="flex items-center justify-between mx-auto max-w-7xl py-3 px-2">
         {/* Left side */}
         <div className="flex items-center gap-6">
@@ -41,7 +41,7 @@ const Menubar = () => {
                   <div key={index}>
                     <Link
                       href={category?.href}
-                      className="hover:!bg-[#1867d6] hover:!text-white rounded-none py-3 px-4 duration-300  block cursor-pointer"
+                      className="hover:!bg-[#276680] hover:!text-white rounded-none py-3 px-4 duration-300  block cursor-pointer"
                     >
                       <div className="flex items-center text-[12px] gap-2">
                         <Icon className="hover:text-white h-4 w-4 " />

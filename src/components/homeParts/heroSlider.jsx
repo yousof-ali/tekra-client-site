@@ -24,7 +24,7 @@ export default function HeroSlider() {
             >
               <div className="w-7xl pl-4 mx-auto relative px-6">
                 <div className="xl:w-[626px] sm:w-[600px]  w-full">
-                  <p className="text-[#1867d6] font-medium md:text-3xl text-lg mb-3">
+                  <p className="text-[#276680] font-medium md:text-3xl text-lg mb-3">
                     {slide.subtitle}
                   </p>
                   <h1 className="text-4xl md:text-6xl font-bold text-black leading-tight mb-6">

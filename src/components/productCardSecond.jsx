@@ -41,7 +41,7 @@ const ProductCardSecond = ({ product }) => {
         </div>
 
         {/* Product Name */}
-        <p className="text-gray-700 cursor-pointer duration-400 hover:text-[#1867d6] font-semibold text-sm md:text-base line-clamp-2">
+        <p className="text-gray-700 cursor-pointer duration-400 hover:text-[#276680] font-semibold text-sm md:text-base line-clamp-2">
           {name}
         </p>
 

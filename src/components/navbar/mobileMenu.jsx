@@ -39,7 +39,7 @@ export default function MobileMenu({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
-  const menuIcon = [House, PackageSearch, ShoppingCart, ReceiptText, HeartIcon ,Layout, LogIn];
+  const menuIcon = [House, PackageSearch, ShoppingCart, ReceiptText, HeartIcon, Layout, LogIn];
   const submenuIcon = [ShieldCheck, ScrollText, CircleQuestionMark];
 
   return (
@@ -63,7 +63,7 @@ export default function MobileMenu({ isOpen, onClose }) {
             className="rounded-full h-12 w-12"
             variant="outline"
           >
-            <X/>
+            <X />
           </Button>
         </div>
 
@@ -76,7 +76,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                 placeholder="Search Product..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-3 pr-12 py-2 border border-gray-300 rounded-none text-sm outline-none focus:border-[#1867d6]"
+                className="w-full pl-3 pr-12 py-2 border border-gray-300 rounded-none text-sm outline-none focus:border-[#276680]"
               />
               <Button
                 size="sm"
@@ -92,18 +92,16 @@ export default function MobileMenu({ isOpen, onClose }) {
         <div className="flex justify-center w-full px-4 items-center gap-2 border-b pb-2">
           <span
             onClick={() => setToggleMenu(true)}
-            className={`text-base cursor-pointer ${
-              toggleMenu ? "text-black" : "text-gray-400"
-            } font-semibold w-1/2`}
+            className={`text-base cursor-pointer ${toggleMenu ? "text-black" : "text-gray-400"
+              } font-semibold w-1/2`}
           >
             Categories
           </span>
 
           <span
             onClick={() => setToggleMenu(false)}
-            className={`text-base cursor-pointer ${
-              !toggleMenu ? "text-black" : "text-gray-400"
-            } font-semibold w-1/2`}
+            className={`text-base cursor-pointer ${!toggleMenu ? "text-black" : "text-gray-400"
+              } font-semibold w-1/2`}
           >
             Main Menu
           </span>
@@ -121,10 +119,9 @@ export default function MobileMenu({ isOpen, onClose }) {
                   key={index}
                   href={category.href}
                   className={`w-full block py-3 px-4 duration-300 cursor-pointer flex items-center text-[12px] gap-2 
-                    ${
-                      isActive
-                        ? "bg-[#1867d6] text-white"
-                        : "hover:bg-[#1867d6] hover:text-white"
+                    ${isActive
+                      ? "bg-[#276680] text-white"
+                      : "hover:bg-[#276680] hover:text-white"
                     }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -149,14 +146,13 @@ export default function MobileMenu({ isOpen, onClose }) {
                   <div key={index}>
                     <div
                       onClick={toggleSubmenu}
-                      className="flex duration-300 cursor-pointer text-sm w-full py-3 px-4 justify-between items-center hover:bg-[#1867d6] hover:text-white"
+                      className="flex duration-300 cursor-pointer text-sm w-full py-3 px-4 justify-between items-center hover:bg-[#276680] hover:text-white"
                     >
                       <p>{category.mainManu}</p>
                       <ChevronDown
                         size={14}
-                        className={`transition-transform duration-300 ${
-                          isMenuOpen ? "rotate-180" : ""
-                        }`}
+                        className={`transition-transform duration-300 ${isMenuOpen ? "rotate-180" : ""
+                          }`}
                       />
                     </div>
 
@@ -171,10 +167,9 @@ export default function MobileMenu({ isOpen, onClose }) {
                             key={idx}
                             href={category.subhref[idx]}
                             className={`flex w-full gap-2 text-sm py-3 px-6 items-center 
-                              ${
-                                isActive
-                                  ? "bg-[#1867d6] text-white"
-                                  : "hover:bg-[#1867d6] hover:text-white"
+                              ${isActive
+                                ? "bg-[#276680] text-white"
+                                : "hover:bg-[#276680] hover:text-white"
                               }`}
                           >
                             <SubIcon className="w-4 h-4" />
@@ -193,10 +188,9 @@ export default function MobileMenu({ isOpen, onClose }) {
                   key={index}
                   href={category.href}
                   className={`flex duration-300 cursor-pointer text-sm w-full py-3 px-4 gap-2 items-center 
-                    ${
-                      isActive
-                        ? "bg-[#1867d6] text-white"
-                        : "hover:bg-[#1867d6] hover:text-white"
+                    ${isActive
+                      ? "bg-[#276680] text-white"
+                      : "hover:bg-[#276680] hover:text-white"
                     }`}
                 >
                   <Icon className="w-4" />

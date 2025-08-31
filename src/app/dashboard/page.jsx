@@ -15,7 +15,7 @@ const Overview = () => {
             const Icon = item.icon;
             return (
               <div className="bg-blue-100  space-y-2  rounded flex flex-col justify-center  lg:p-8 p-4 border" key={indx}>
-                <div className="md:w-14 md:h-14 h-10 w-10 mx-auto rounded-full flex items-center justify-center text-white bg-[#1867d6]">
+                <div className="md:w-14 md:h-14 h-10 w-10 mx-auto rounded-full flex items-center justify-center text-white bg-[#276680]">
                   <Icon className="w-6 h-6" />
                 </div>
                 <h2 className="lg:text-xl font-semibold text-center text-base text-gray-600">
@@ -28,7 +28,7 @@ const Overview = () => {
         </div>
       </section>
       <section className="mt-10">
-        <RecentOrders/>
+        <RecentOrders />
       </section>
     </>
   );
