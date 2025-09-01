@@ -1,9 +1,6 @@
-import flag1 from "@/asset/navbarImages/usa.png";
-import flag2 from "@/asset/navbarImages/bangladesh.png";
-import flag3 from "@/asset/navbarImages/india.png";
 import slider1 from "@/asset/sliderImages/banner1.png";
 import slider2 from "@/asset/sliderImages/banner2.png";
-import slider3 from "@/asset/sliderImages/banner.png";
+import slider3 from "@/asset/sliderImages/banner3.png";
 
 import brand1 from "@/asset/homeImages/brand-1.png";
 import brand2 from "@/asset/homeImages/brand-2.png";
@@ -18,40 +15,76 @@ import brand9 from "@/asset/homeImages/brand-9.png";
 import brand10 from "@/asset/homeImages/brand-10.png";
 import brand11 from "@/asset/homeImages/brand-11.png";
 import brand12 from "@/asset/homeImages/brand-12.png";
-import { Armchair, BaggageClaim, CarFront, CircleQuestionMark, Clock3, Coffee, Gamepad, Gamepad2, HeartIcon, House, icons, Images, Key, Layout, LogIn, Mail, MonitorSmartphone, PackageCheck, PackageSearch, PanelsTopLeft, ReceiptText, Repeat, RotateCcw, ScrollText, ShieldCheck, Shirt, ShoppingBag, ShoppingCart, Ticket, Trophy, Truck, UserPenIcon, Wallet } from "lucide-react";
-
-
+import {
+  Armchair,
+  BaggageClaim,
+  CarFront,
+  CircleQuestionMark,
+  Clock3,
+  Coffee,
+  Gamepad,
+  Gamepad2,
+  HeartIcon,
+  House,
+  icons,
+  Images,
+  Key,
+  Layout,
+  LogIn,
+  Mail,
+  MonitorSmartphone,
+  PackageCheck,
+  PackageSearch,
+  PanelsTopLeft,
+  ReceiptText,
+  Repeat,
+  RotateCcw,
+  ScrollText,
+  ShieldCheck,
+  Shirt,
+  ShoppingBag,
+  ShoppingCart,
+  Ticket,
+  Trophy,
+  Truck,
+  UserPenIcon,
+  Wallet,
+} from "lucide-react";
 
 export const Maincategory = [
-  { label: "Mobile", href: "/category/mobiles-laptops", icon: MonitorSmartphone },
-  { label: "Laptop", href: "/category/gaming",icon:Gamepad2 },
-  { label: "Image & Video", href: "/category/image-video",icon:Images },
-  { label: "Vehicles", href: "/category/vehicles",icon:CarFront },
-  { label: "Furnitures", href: "/category/furnitures",icon:Armchair },
-  { label: "Sport", href: "/category/sport",icon:Trophy },
-  { label: "Food & Drinks", href: "/category/food-drinks",icon:Coffee },
-  { label: "Fashion", href: "/category/fashion",icon:Shirt },
+  {
+    label: "Mobile",
+    href: "/category/mobiles-laptops",
+    icon: MonitorSmartphone,
+  },
+  { label: "Laptop", href: "/category/gaming", icon: Gamepad2 },
+  { label: "Image & Video", href: "/category/image-video", icon: Images },
+  { label: "Vehicles", href: "/category/vehicles", icon: CarFront },
+  { label: "Furnitures", href: "/category/furnitures", icon: Armchair },
+  { label: "Sport", href: "/category/sport", icon: Trophy },
+  { label: "Food & Drinks", href: "/category/food-drinks", icon: Coffee },
+  { label: "Fashion", href: "/category/fashion", icon: Shirt },
 ];
 
 export const HomeSlides = [
   {
     id: 1,
-    subtitle: "VR BOX 3D Glass",
-    title: "Explore Our Tech Collection Perfect Gadget",
+    subtitle: "Premium Headphones",
+    title: "Immerse Yourself in Crystal-Clear Sound",
     button: "Shop Now",
     bg: slider1,
   },
   {
     id: 2,
-    subtitle: "Smart Watch",
-    title: "Track Your Fitness in Style Every Day",
+    subtitle: "Next-Gen VR",
+    title: "Step Into the Future with Virtual Reality",
     button: "Shop Now",
     bg: slider2,
   },
   {
     id: 3,
-    subtitle: "Wireless Headphones",
-    title: "Experience Premium Sound Without Limits",
+    subtitle: "Laptop & Mobile",
+    title: "Power and Portability in Every Device",
     button: "Shop Now",
     bg: slider3,
   },
@@ -75,41 +108,41 @@ export const Brands = [
 export const Navmenu = [
   {
     mainManu: "Home",
-    href:"/",
-    icon:House
+    href: "/",
+    icon: House,
   },
   {
     mainManu: "Shop",
-     href:"/shop",
-     icon:PackageSearch
+    href: "/shop",
+    icon: PackageSearch,
   },
   {
     mainManu: "Cart",
-    href:"/cart",
-    icon:ShoppingCart
+    href: "/cart",
+    icon: ShoppingCart,
   },
   {
     mainManu: "Checkout",
-    href:"/checkout",
-    icon:ReceiptText
+    href: "/checkout",
+    icon: ReceiptText,
   },
   {
     mainManu: "Wishlist",
-    href:"/wishlist",
-    icon:HeartIcon
+    href: "/wishlist",
+    icon: HeartIcon,
   },
   {
     mainManu: "Dashboard",
-    href:"/dashboard",
-    icon:Layout
+    href: "/dashboard",
+    icon: Layout,
   },
-   {
+  {
     mainManu: "Pages",
-     
+
     subMenu: ["Privacy Policy", "Terms and Conditions", "FAQ"],
-    subhref : ["/privacy","/terms","/faq"],
-    submenuIcon : [ShieldCheck, ScrollText, CircleQuestionMark]
-  }
+    subhref: ["/privacy", "/terms", "/faq"],
+    submenuIcon: [ShieldCheck, ScrollText, CircleQuestionMark],
+  },
 ];
 
 export const Products = [
@@ -283,7 +316,7 @@ export const Products = [
       "5G Connectivity",
       "Under-display Fingerprint Sensor",
     ],
-     section: "top selling",
+    section: "top selling",
   },
   {
     id: 6,
@@ -318,7 +351,7 @@ export const Products = [
       "Safety Protections",
       "Compact Lightweight Design",
     ],
-      section: "top selling",
+    section: "top selling",
   },
   {
     id: 7,
@@ -353,7 +386,7 @@ export const Products = [
       "Customizable EQ",
       "Voice Assistant Support",
     ],
-    section: "popular sales", 
+    section: "popular sales",
   },
   {
     id: 8,
@@ -388,7 +421,7 @@ export const Products = [
       "Professional-grade Crossover",
       "Real Wood Veneer Finish",
     ],
-    section: "popular sales", 
+    section: "popular sales",
   },
   {
     id: 9,
@@ -423,7 +456,7 @@ export const Products = [
       "Minimal Sound Leakage",
       "Rugged Construction",
     ],
-      section: "top selling", 
+    section: "top selling",
   },
   {
     id: 10,
@@ -458,7 +491,7 @@ export const Products = [
       "99% sRGB Color Coverage",
       "Adjustable Stand",
     ],
-     section: "gamer world",
+    section: "gamer world",
   },
   {
     id: 11,
@@ -493,7 +526,7 @@ export const Products = [
       "Detachable USB-C Cable",
       "Programmable Macro Keys",
     ],
-     section: "gamer world"
+    section: "gamer world",
   },
   {
     id: 12,
@@ -559,17 +592,17 @@ export const FooterData = [
   {
     title: "Feature",
     links: ["About Us", "Terms Condition", "Best Products"],
-    href : ["#","/terms","/shop"]
+    href: ["#", "/terms", "/shop"],
   },
   {
     title: "General Links",
     links: ["Blog", "Tracking Order", "Become Seller"],
-    href:["#","/dashboard/order-tracking","#"]
+    href: ["#", "/dashboard/order-tracking", "#"],
   },
   {
     title: "Helpful",
     links: ["Flash Sale", "FAQ", "Support"],
-    href:["/shop","/faq","#"]
+    href: ["/shop", "/faq", "#"],
   },
 ];
 
@@ -794,60 +827,59 @@ export const TermsDAta = [
   },
 ];
 
-
 export const DashboardLinks = [
   {
     text: "Overview",
     href: "/dashboard",
-    icon: PanelsTopLeft
+    icon: PanelsTopLeft,
   },
   {
     text: "Purchased Items",
     href: "/dashboard/purchased-items",
-    icon:  ShoppingBag
+    icon: ShoppingBag,
   },
   {
     text: "Transactions",
     href: "/dashboard/transactions",
-    icon:  Repeat
+    icon: Repeat,
   },
   {
     text: "Order Tracking",
     href: "/dashboard/order-tracking",
-    icon: Truck
+    icon: Truck,
   },
-   {
+  {
     text: "Messages",
     href: "/dashboard/message",
-    icon: Mail
+    icon: Mail,
   },
-   {
+  {
     text: "Tickets",
     href: "/dashboard/tickets",
-    icon: Ticket
+    icon: Ticket,
   },
   {
     text: "Edit Profile",
     href: "/dashboard/edit-profile",
-    icon: UserPenIcon
+    icon: UserPenIcon,
   },
   {
     text: "Reset Password",
     href: "/dashboard/reset-password",
-    icon: Key
+    icon: Key,
   },
   {
     text: "Logout",
     href: "/logout",
-    icon: LogIn
+    icon: LogIn,
   },
-]
+];
 
 export const dashboardOverviewCards = [
   {
     key: "totalProducts",
     label: "Total Products",
-    value: 128, 
+    value: 128,
     icon: PackageCheck,
   },
   {
@@ -862,7 +894,7 @@ export const dashboardOverviewCards = [
     value: 27,
     icon: Clock3,
   },
-  
+
   {
     key: "walletBalance",
     label: "Wallet Balance",
@@ -876,186 +908,193 @@ export const Orders = [
     id: 1,
     order_id: "ORD1001",
     date: "2025-08-25",
-    total_amount: 150.00,
-    order_status: "Completed"
+    total_amount: 150.0,
+    order_status: "Completed",
   },
   {
     id: 2,
     order_id: "ORD1002",
     date: "2025-08-25",
     total_amount: 89.99,
-    order_status: "Pending"
+    order_status: "Pending",
   },
   {
     id: 3,
     order_id: "ORD1003",
     date: "2025-08-26",
-    total_amount: 299.00,
-    order_status: "Completed"
+    total_amount: 299.0,
+    order_status: "Completed",
   },
   {
     id: 4,
     order_id: "ORD1004",
     date: "2025-08-26",
-    total_amount: 45.50,
-    order_status: "Completed"
+    total_amount: 45.5,
+    order_status: "Completed",
   },
   {
     id: 5,
     order_id: "ORD1005",
     date: "2025-08-27",
     total_amount: 120.75,
-    order_status: "Pending"
+    order_status: "Pending",
   },
   {
     id: 6,
     order_id: "ORD1006",
     date: "2025-08-27",
     total_amount: 199.99,
-    order_status: "Completed"
+    order_status: "Completed",
   },
   {
     id: 7,
     order_id: "ORD1007",
     date: "2025-08-27",
-    total_amount: 340.00,
-    order_status: "Pending"
+    total_amount: 340.0,
+    order_status: "Pending",
   },
   {
     id: 8,
     order_id: "ORD1008",
     date: "2025-08-27",
     total_amount: 59.99,
-    order_status: "Completed"
+    order_status: "Completed",
   },
   {
     id: 9,
     order_id: "ORD1009",
     date: "2025-08-27",
-    total_amount: 74.20,
-    order_status: "Pending"
+    total_amount: 74.2,
+    order_status: "Pending",
   },
   {
     id: 10,
     order_id: "ORD1010",
     date: "2025-08-27",
-    total_amount: 500.00,
-    order_status: "Completed"
-  }
+    total_amount: 500.0,
+    order_status: "Completed",
+  },
 ];
-
 
 export const Transactions = [
   {
-    "transactionId": "TXN001",
-    "amount": 150.75,
-    "transactionDate": "2025-08-01",
-    "details": "Payment received"
+    transactionId: "TXN001",
+    amount: 150.75,
+    transactionDate: "2025-08-01",
+    details: "Payment received",
   },
   {
-    "transactionId": "TXN002",
-    "amount": 89.99,
-    "transactionDate": "2025-08-02",
-    "details": "Monthly subscription"
+    transactionId: "TXN002",
+    amount: 89.99,
+    transactionDate: "2025-08-02",
+    details: "Monthly subscription",
   },
   {
-    "transactionId": "TXN003",
-    "amount": 300.00,
-    "transactionDate": "2025-08-03",
-    "details": "Online purchase"
+    transactionId: "TXN003",
+    amount: 300.0,
+    transactionDate: "2025-08-03",
+    details: "Online purchase",
   },
   {
-    "transactionId": "TXN004",
-    "amount": 45.50,
-    "transactionDate": "2025-08-04",
-    "details": "Fuel refill"
+    transactionId: "TXN004",
+    amount: 45.5,
+    transactionDate: "2025-08-04",
+    details: "Fuel refill",
   },
   {
-    "transactionId": "TXN005",
-    "amount": 1200.00,
-    "transactionDate": "2025-08-05",
-    "details": "Salary credited"
+    transactionId: "TXN005",
+    amount: 1200.0,
+    transactionDate: "2025-08-05",
+    details: "Salary credited",
   },
   {
-    "transactionId": "TXN006",
-    "amount": 62.35,
-    "transactionDate": "2025-08-06",
-    "details": "Grocery shopping"
+    transactionId: "TXN006",
+    amount: 62.35,
+    transactionDate: "2025-08-06",
+    details: "Grocery shopping",
   },
   {
-    "transactionId": "TXN007",
-    "amount": 200.00,
-    "transactionDate": "2025-08-07",
-    "details": "Gym membership"
+    transactionId: "TXN007",
+    amount: 200.0,
+    transactionDate: "2025-08-07",
+    details: "Gym membership",
   },
   {
-    "transactionId": "TXN008",
-    "amount": 18.20,
-    "transactionDate": "2025-08-08",
-    "details": "Coffee shop"
+    transactionId: "TXN008",
+    amount: 18.2,
+    transactionDate: "2025-08-08",
+    details: "Coffee shop",
   },
   {
-    "transactionId": "TXN009",
-    "amount": 750.00,
-    "transactionDate": "2025-08-09",
-    "details": "Freelance work"
+    transactionId: "TXN009",
+    amount: 750.0,
+    transactionDate: "2025-08-09",
+    details: "Freelance work",
   },
   {
-    "transactionId": "TXN010",
-    "amount": 99.99,
-    "transactionDate": "2025-08-10",
-    "details": "Utility bill"
-  }
-]
+    transactionId: "TXN010",
+    amount: 99.99,
+    transactionDate: "2025-08-10",
+    details: "Utility bill",
+  },
+];
 
 export const Messages = [
   {
     name: "Alice Johnson",
-    message: "Hi there! I just wanted to follow up on our meeting from last week. Let me know if you had any more questions.",
-    sent: "2 days ago"
+    message:
+      "Hi there! I just wanted to follow up on our meeting from last week. Let me know if you had any more questions.",
+    sent: "2 days ago",
   },
   {
     name: "Michael Lee",
-    message: "The documents you asked for have been uploaded to the shared folder. Let me know once you’ve reviewed them.",
-    sent: "5 days ago"
+    message:
+      "The documents you asked for have been uploaded to the shared folder. Let me know once you’ve reviewed them.",
+    sent: "5 days ago",
   },
   {
     name: "Samantha Green",
-    message: "Thanks again for your help on the project. I really appreciated your feedback and support throughout.",
-    sent: "12 days ago"
+    message:
+      "Thanks again for your help on the project. I really appreciated your feedback and support throughout.",
+    sent: "12 days ago",
   },
   {
     name: "David Kim",
-    message: "Just a reminder that we have a call scheduled tomorrow at 10 AM. Please confirm your availability.",
-    sent: "1 day ago"
+    message:
+      "Just a reminder that we have a call scheduled tomorrow at 10 AM. Please confirm your availability.",
+    sent: "1 day ago",
   },
   {
     name: "Emma Wilson",
-    message: "I’ve completed the first draft of the proposal. Can you take a look and let me know your thoughts by Friday?",
-    sent: "3 days ago"
+    message:
+      "I’ve completed the first draft of the proposal. Can you take a look and let me know your thoughts by Friday?",
+    sent: "3 days ago",
   },
   {
     name: "Chris Martin",
-    message: "I ran into a small issue with the deployment process, but it’s under control. I’ll update you soon.",
-    sent: "7 days ago"
+    message:
+      "I ran into a small issue with the deployment process, but it’s under control. I’ll update you soon.",
+    sent: "7 days ago",
   },
   {
     name: "Olivia Brown",
-    message: "Let’s schedule a quick check-in next week to go over the upcoming milestones and reassign any tasks if needed.",
-    sent: "9 days ago"
+    message:
+      "Let’s schedule a quick check-in next week to go over the upcoming milestones and reassign any tasks if needed.",
+    sent: "9 days ago",
   },
   {
     name: "Nathan Scott",
-    message: "Hey! Just wanted to say great job on the recent release. The clients are really happy with the outcome.",
-    sent: "4 days ago"
-  }
+    message:
+      "Hey! Just wanted to say great job on the recent release. The clients are really happy with the outcome.",
+    sent: "4 days ago",
+  },
 ];
-
 
 export const mockMessages = [
   {
     id: "1",
-    content: "Hi! I'm interested in your product. Can you tell me more about the pricing?",
+    content:
+      "Hi! I'm interested in your product. Can you tell me more about the pricing?",
     sender: "customer",
     timestamp: new Date("2024-01-15T10:30:00"),
     senderName: "Sarah Johnson",
@@ -1087,4 +1126,4 @@ export const mockMessages = [
     senderName: "Mike Chen",
     senderAvatar: "/professional-man.png",
   },
-]
+];
