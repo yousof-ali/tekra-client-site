@@ -2,6 +2,8 @@ import flag1 from "@/asset/navbarImages/usa.png";
 import flag2 from "@/asset/navbarImages/bangladesh.png";
 import flag3 from "@/asset/navbarImages/india.png";
 import slider1 from "@/asset/sliderImages/banner1.png";
+import slider2 from "@/asset/sliderImages/banner2.png";
+import slider3 from "@/asset/sliderImages/banner.png";
 
 import brand1 from "@/asset/homeImages/brand-1.png";
 import brand2 from "@/asset/homeImages/brand-2.png";
@@ -44,14 +46,14 @@ export const HomeSlides = [
     subtitle: "Smart Watch",
     title: "Track Your Fitness in Style Every Day",
     button: "Shop Now",
-    bg: slider1,
+    bg: slider2,
   },
   {
     id: 3,
     subtitle: "Wireless Headphones",
     title: "Experience Premium Sound Without Limits",
     button: "Shop Now",
-    bg: slider1,
+    bg: slider3,
   },
 ];
 

@@ -17,7 +17,7 @@ import Link from "next/link";
 export default function Navbar() {
   
   return (
-    <header>
+    <header className=" sticky top-0 border-b  bg-white z-60">
         <div className="flex  mx-auto max-w-7xl py-5 px-2 justify-between items-center">
           <div className="block lg:hidden">
             <MobileMenuToggleBtn/>
