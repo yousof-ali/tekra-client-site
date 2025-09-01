@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import {LogIn } from "lucide-react";
 import { Navmenu } from "@/utils/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -76,7 +76,7 @@ const Menubar = () => {
 
         {/* Right side */}
         <Button variant={"outline"} className="bg-[#22657d] text-white  border-white">
-          Login <ChevronRight size={16} />
+          Login <LogIn/>
         </Button>
       </div>
     </div>

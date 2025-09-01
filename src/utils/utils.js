@@ -20,7 +20,7 @@ import { Armchair, BaggageClaim, CarFront, CircleQuestionMark, Clock3, Coffee, G
 
 
 
-export const MenuCategories = [
+export const Maincategory = [
   { label: "Mobile", href: "/category/mobiles-laptops", icon: MonitorSmartphone },
   { label: "Laptop", href: "/category/gaming",icon:Gamepad2 },
   { label: "Image & Video", href: "/category/image-video",icon:Images },
@@ -100,11 +100,6 @@ export const Navmenu = [
     mainManu: "Dashboard",
     href:"/dashboard",
     icon:Layout
-  },
-  {
-    mainManu: "Login",
-    href:"/login",
-    icon:LogIn
   },
    {
     mainManu: "Pages",
