@@ -21,8 +21,8 @@ import { Armchair, BaggageClaim, CarFront, CircleQuestionMark, Clock3, Coffee, G
 
 
 export const MenuCategories = [
-  { label: "Mobiles & Laptops", href: "/category/mobiles-laptops", icon: MonitorSmartphone },
-  { label: "Gaming Entertainment", href: "/category/gaming",icon:Gamepad2 },
+  { label: "Mobile", href: "/category/mobiles-laptops", icon: MonitorSmartphone },
+  { label: "Laptop", href: "/category/gaming",icon:Gamepad2 },
   { label: "Image & Video", href: "/category/image-video",icon:Images },
   { label: "Vehicles", href: "/category/vehicles",icon:CarFront },
   { label: "Furnitures", href: "/category/furnitures",icon:Armchair },

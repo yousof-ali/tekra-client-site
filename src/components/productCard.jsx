@@ -33,7 +33,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="bg-white group shadow-md overflow-hidden">
+    <div className="bg-white group rounded-md shadow-md overflow-hidden">
       {/* Image Wrapper */}
       <div className="w-full lg:p-12 relative sm:p-16 md:p-8 h-[300px] flex justify-center items-center bg-white">
         <Image

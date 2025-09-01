@@ -1,7 +1,6 @@
 
-import { Handbag, Heart, Repeat2, UserRound } from "lucide-react";
+import { Handbag, Heart, Repeat2, Search, UserRound } from "lucide-react";
 import Image from "next/image";
-
 
 import {
   Select,
@@ -19,7 +18,6 @@ export default function Navbar() {
   
   return (
     <header>
-      <div className="">
         <div className="flex  mx-auto max-w-7xl py-5 px-2 justify-between items-center">
           <div className="block lg:hidden">
             <MobileMenuToggleBtn/>
@@ -49,7 +47,7 @@ export default function Navbar() {
             </div>
             <div>
               <Button className={'rounded-none'} >
-                Search
+                <Search/> Search
               </Button>
             </div>
           </div>
@@ -61,7 +59,6 @@ export default function Navbar() {
           </div>
         </div>
         <Menubar />
-      </div>
     </header>
   );
 }

@@ -1,10 +1,6 @@
-import React from "react";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-} from "@/components/ui/dropdown-menu";
+"use client"
 
+import React from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -15,98 +11,72 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import { Button } from "@/components/ui/button";
-import { ChevronDown, ChevronRight, Menu } from "lucide-react";
-import { MenuCategories, Navmenu } from "@/utils/utils";
+import { ChevronRight } from "lucide-react";
+import { Navmenu } from "@/utils/utils";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Menubar = () => {
+  const pathname = usePathname(); 
+
   return (
     <div className="bg-[#276680] hidden lg:block">
       <div className="flex items-center justify-between mx-auto max-w-7xl py-3 px-2">
-        {/* Left side */}
-        <div className="flex items-center gap-6">
-          {/* All Categories Dropdown */}
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex cursor-pointer items-center gap-2 px-4 py-3 -mb-3 bg-white justify-between text-[#1c1c1c] outline-0 rounded-t-md min-w-68">
-              <div className="flex gap-2  items-center">
-                <Menu size={16} /> All Categories
-              </div>
-              <ChevronDown size={16} />
-            </DropdownMenuTrigger>
-
-            <DropdownMenuContent className="w-68 hidden lg:block right-0-0 font-medium px-0 rounded-t-none">
-              {MenuCategories.map((category, index) => {
-                const Icon = category.icon;
+        {/* Navigation Menu */}
+        <NavigationMenu viewport={false}>
+          <NavigationMenuList>
+            {Navmenu.map((item, index) => {
+              if (item?.subMenu) {
+                // Dropdown with submenu
                 return (
-                  <div key={index}>
-                    <Link
-                      href={category?.href}
-                      className="hover:!bg-[#276680] hover:!text-white rounded-none py-3 px-4 duration-300  block cursor-pointer"
-                    >
-                      <div className="flex items-center text-[12px] gap-2">
-                        <Icon className="hover:text-white h-4 w-4 " />
-                        <p>{category?.label}</p>
-                      </div>
-                    </Link>
-                  </div>
+                  <NavigationMenuItem key={index}>
+                    <NavigationMenuTrigger className="flex items-center gap-2 text-white">
+                      {item.mainManu}
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent className="z-10">
+                      <ul className="w-[220px] p-2 space-y-1">
+                        {item.subMenu.map((subItem, subIndex) => (
+                          <li key={subIndex}>
+                            <NavigationMenuLink asChild>
+                              <Link
+                                href={item.subhref[subIndex]}
+                                className="p-2 hover:bg-accent hover:text-accent-foreground rounded-md"
+                              >
+                                {subItem}
+                              </Link>
+                            </NavigationMenuLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
                 );
-              })}
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          {/* Navigation Menu */}
-          <NavigationMenu viewport={false}>
-            <NavigationMenuList>
-              {Navmenu.map((item, index) => {
-                if (item?.subMenu) {
-                  // Render dropdown with submenu
-                  return (
-                    <NavigationMenuItem key={index}>
-                      <NavigationMenuTrigger className="flex items-center gap-2">
-                        {item.mainManu}
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent className="z-10">
-                        <ul className="w-[220px] p-2 space-y-1">
-                          {item.subMenu.map((subItem, subIndex) => {
-                            return (
-                              <li key={subIndex}>
-                                <NavigationMenuLink asChild>
-                                  <Link
-                                    href={item.subhref[subIndex]}
-                                    className=" p-2 hover:bg-accent hover:text-accent-foreground rounded-md"
-                                  >
-                                    {subItem}
-                                  </Link>
-                                </NavigationMenuLink>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </NavigationMenuContent>
-                    </NavigationMenuItem>
-                  );
-                } else {
-                  // Render normal menu link
-
-                  return (
-                    <NavigationMenuItem key={index}>
-                      <Link
-                        href={item.href}
-                        className="px-4 py-2 text-white hover:bg-black hover:text-white rounded-md"
-                      >
-                        {item.mainManu}
-                      </Link>
-                    </NavigationMenuItem>
-                  );
-                }
-              })}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
+              } else {
+                // Normal menu link
+                return (
+                  <NavigationMenuItem key={index}>
+                    <Link
+                      href={item.href}
+                      className={`relative px-4 py-2 text-white 
+                        after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 
+                        after:bg-white  after:transition-all after:duration-300 
+                        hover:after:w-full
+                        ${
+                          pathname === item.href ? "after:w-full" : ""
+                        }`}
+                    >
+                      {item.mainManu}
+                    </Link>
+                  </NavigationMenuItem>
+                );
+              }
+            })}
+          </NavigationMenuList>
+        </NavigationMenu>
 
         {/* Right side */}
-        <Button variant={"secondary"} className="rounded-none">
-          Become a Seller <ChevronRight size={16} />
+        <Button variant={"outline"} className="bg-[#22657d] text-white  border-white">
+          Login <ChevronRight size={16} />
         </Button>
       </div>
     </div>
