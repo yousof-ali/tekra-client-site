@@ -10,11 +10,13 @@ import Features from "@/components/homeParts/features";
 
 import PromotionalAds1 from "@/components/ads/promotionalAds1";
 import PromotionalAds2 from "@/components/ads/promotionalAds2";
+import CategorySlider from "@/components/homeParts/categorySlider";
 
 const Home = () => {
   return (
     <div className="bg-[#f7f7f7]">
       <HeroSlider />
+      <CategorySlider/>
 
       <AllBrands />
 

@@ -15,6 +15,15 @@ import brand9 from "@/asset/homeImages/brand-9.png";
 import brand10 from "@/asset/homeImages/brand-10.png";
 import brand11 from "@/asset/homeImages/brand-11.png";
 import brand12 from "@/asset/homeImages/brand-12.png";
+import mobile from "@/asset/categoryImages/mobile.png"
+import console from "@/asset/categoryImages/console.png"
+import headphone from "@/asset/categoryImages/headphone.png"
+import laptop from "@/asset/categoryImages/laptop.png"
+import airpod from "@/asset/categoryImages/airpod.png"
+import tv from "@/asset/categoryImages/tv.png"
+import vr from "@/asset/categoryImages/vr.png"
+import tablet from "@/asset/categoryImages/tablet.png"
+import watch from "@/asset/categoryImages/watch.png"
 import {
   Armchair,
   BaggageClaim,
@@ -22,11 +31,9 @@ import {
   CircleQuestionMark,
   Clock3,
   Coffee,
-  Gamepad,
   Gamepad2,
   HeartIcon,
   House,
-  icons,
   Images,
   Key,
   Layout,
@@ -144,6 +151,56 @@ export const Navmenu = [
     submenuIcon: [ShieldCheck, ScrollText, CircleQuestionMark],
   },
 ];
+
+
+export const TopCategories = [
+  {
+    name: "Mobile",
+    href: "/categories/mobile",
+    image: mobile,
+  },
+  {
+    name: "Smart TV",
+    href: "/categories/smart-tv",
+    image: tv,
+  },
+  {
+    name: "Gaming Console",
+    href: "/categories/gaming-console",
+    image: console,
+  },
+  {
+    name: "Headphones",
+    href: "/categories/headphones",
+    image: headphone,
+  },
+  {
+    name: "Laptop",
+    href: "/categories/laptop",
+    image: laptop
+  },
+  {
+    name: "AirPods",
+    href: "/categories/airpods",
+    image: airpod,
+  },
+  {
+    name: "Smart Watch",
+    href: "/categories/smart-watch",
+    image: watch,
+  },
+  {
+    name: "VR",
+    href: "/categories/vr",
+    image: vr,
+  },
+  {
+    name: "tablet",
+    href: "/categories/tablet",
+    image: tablet,
+  },
+];
+
 
 export const Products = [
   {
