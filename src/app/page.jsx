@@ -18,7 +18,7 @@ const Home = () => {
       <HeroSlider />
       <CategorySlider/>
 
-      <AllBrands />
+     
 
       <NewArrivals />
 
@@ -43,6 +43,7 @@ const Home = () => {
       <FlashSale />
 
       <PopularSaleSecond />
+       <AllBrands />
       
       <Features/>
     </div>

@@ -2,7 +2,6 @@
 
 import { ArrowRight } from "lucide-react";
 import ProductCard from "../productCard";
-import { Products } from "@/utils/utils";
 import Link from "next/link";
 import useAllProducts from "@/hook/useAllProduct";
 import ProductCard1Skeletion from "../productCard1skeleton";
@@ -25,7 +24,7 @@ const GamerWorld = () => {
             ? Array(4)
                 .fill(0)
                 .map((_, i) => <ProductCard1Skeletion key={i} />)
-            : data?.filter((item) => item.category === "Gaming").map(
+            : data?.filter((item) => item.category === "gaming console" || item.category === "headphone").map(
               (product, indx) => {
                 return <ProductCard product={product} key={indx} />;
               }

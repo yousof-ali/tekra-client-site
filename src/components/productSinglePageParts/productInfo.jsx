@@ -18,23 +18,29 @@ import useSingleProduct from "@/hook/useSingleProduct";
 
 const ProductInfo = () => {
   const [color, setColour] = useState("red");
-  const { data } = useSingleProduct();
+  const { singleProduct,loading } = useSingleProduct();
+  console.log(singleProduct)
+  if(loading){
+    return(
+      <p>Loading...k.</p>
+    )
+  }
   return (
     <>
       <div className="mx-4 flex flex-col my-8 gap-12 lg:flex-row">
         <div className="w-full lg:w-1/2">
           <div>
             <Image
-              src={data?.images}
+              src={singleProduct?.image}
               alt="product"
               width={400}
               height={400}
               quality={100}
-              className=" border p-4 sm:p-8 lg:p-10 w-full h-60        sm:h-72 md:h-80 lg:h-[400px] object-contain"
+              className=" border p-4 sm:p-8 lg:p-10 w-full h-60 rounded-md  sm:h-72 md:h-80 lg:h-[400px] object-contain"
             />
           </div>
           <div className="lg:mt-4 mt-2 flex-wrap lg:gap-4 gap-2 flex">
-            {data?.allimages?.map((im, indx) => {
+            {singleProduct?.allImages?.map((im, indx) => {
               return (
                 <Image
                   src={im}
@@ -43,7 +49,7 @@ const ProductInfo = () => {
                   width={100}
                   height={200}
                   quality={100}
-                  className="border w-16 h-16 sm:w-24 sm:h-24  md:p-4 p-2"
+                  className="border w-16 h-16 rounded-md sm:w-24 sm:h-24  md:p-4 p-2"
                 />
               );
             })}
@@ -51,38 +57,38 @@ const ProductInfo = () => {
         </div>
         <div className="w-full lg:w-1/2">
           <h4 className="text-xs lg:text-sm text-gray-500 font-semibold uppercase mb-2">
-            {data?.category}
+            {singleProduct?.category}
           </h4>
 
           <h2 className="text-base sm:text-lg  md:text-xl lg:text-2xl">
-            {data?.name}
+            {singleProduct?.name}
           </h2>
 
           <div className="flex items-center mt-2 space-x-1 ">
-            {[...Array(Math.floor(data?.rating))].map((_, index) => (
+            {/* {[...Array(Math.floor(singleProduct?.rating))].map((_, index) => (
               <span key={index} className="text-yellow-500 text-2xl">
                 ★
               </span>
-            ))}{" "}
+            ))}{" "} */}
             <span className="text-xs text-gray-500 lg:text-sm">
-              {data?.reviewCount} reviews
+              {singleProduct?.reviewCount} reviews
             </span>
           </div>
 
           <div className="mt-4 text-base">
-            {data?.originalPrice && (
+            {singleProduct?.originalPrice && (
               <span className="line-through text-gray-400 mr-4">
-                ${data?.originalPrice}
+                ${singleProduct?.originalPrice}
               </span>
             )}
 
             <span className="text-red-600 text-xl font-semibold">
-              ${data?.price}
+              ${singleProduct?.price}
             </span>
           </div>
 
           <p className="text-xs mt-6 lg:text-base text-gray-600 md:text-sm">
-            {data?.description}
+            {singleProduct?.description}
           </p>
 
           <div className="mt-7">
@@ -133,7 +139,7 @@ const ProductInfo = () => {
 
           <div className="mt-7 space-y-2">
             <p className="text-sm md:text-base">
-              Category : <span className="text-gray-500">{data?.category}</span>
+              Category : <span className="text-gray-500">{singleProduct?.category}</span>
             </p>
 
             <p className="text-sm md:text-base">

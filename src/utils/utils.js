@@ -195,7 +195,7 @@ export const TopCategories = [
     image: vr,
   },
   {
-    name: "tablet",
+    name: "Tablet",
     href: "/categories/tablet",
     image: tablet,
   },

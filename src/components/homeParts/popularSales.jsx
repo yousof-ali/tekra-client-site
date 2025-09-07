@@ -1,9 +1,12 @@
-import { Products } from "@/utils/utils";
-import ProductCard from "../productCard";
+"use client"
+
+import useAllProducts from "@/hook/useAllProduct";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import ProductCard from "../productCard";
 
 const PopularSales = () => {
+  const[data,loading] = useAllProducts([]);
 return(
   <section className="mt-8 lg:mt-16">
         <div className="max-w-7xl mx-auto px-4">
@@ -16,7 +19,7 @@ return(
             </div>
           </div>
           <div className="grid grid-cols-1 mt-4 lg:gap-7 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {Products?.sort((a, b) => b.rating - a.rating)
+            {data?.sort((a, b) => b.rating - a.rating)
               ?.slice(0, 4)
               ?.map((product, indx) => {
                 return <ProductCard product={product} key={indx} />;

@@ -16,7 +16,7 @@ const NewArrivals = () => {
 
   return (
     <section>
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto mt-12 px-4">
         <div className="text-[#1d1d1d] flex items-center justify-between  font-semibold">
           <h2
             className="sectionHeading

@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 
 const ProductCard = ({ product }) => {
   const [wishlist, setWishlist] = useState([]);
-  const { id, name, price, originalPrice, rating, images } = product;
+  const { id, name, price, originalPrice, rating, image } = product;
 
   const handleWishlist = (id) => {
     if (wishlist.includes(id)) {
@@ -35,15 +35,17 @@ const ProductCard = ({ product }) => {
   return (
     <div className="bg-white group rounded-md shadow-md overflow-hidden">
       {/* Image Wrapper */}
-      <div className="w-full lg:p-12 relative sm:p-16 md:p-8 h-[300px] flex justify-center items-center bg-white">
-        <Image
+      <div className="w-full  relative sm:p-8 p-4 flex justify-center items-center bg-white">
+        <div className=" h-42 w-42">
+          <Image
           alt="Product Image"
-          src={images}
+          src={image}
           width={200}
           height={200}
           quality={100}
-          className="object-cover"
+          className="h-full w-full "
         />
+        </div>
         <div className="absolute flex flex-col space-y-3 right-5 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
           <span className="p-2 bg-gray-200 cursor-pointer rounded-md">
             <Expand className="h-5 w-5" />
@@ -63,7 +65,7 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* Details Section */}
-      <div className="p-6 relative">
+      <div className="px-6 pb-6  relative">
         {/* Rating */}
         <div className="flex items-center space-x-1">
           {[...Array(Math.floor(rating))].map((_, index) => (
@@ -76,7 +78,7 @@ const ProductCard = ({ product }) => {
         {/* Product Name */}
         <Link
           href={`/shop/${id}`}
-          className="text-gray-700 cursor-pointer duration-400 hover:text-[#1867d6] font-semibold text-base line-clamp-2"
+          className="text-gray-600 cursor-pointer duration-400 hover:text-[#1867d6] font-semibold text-sm line-clamp-2"
         >
           {name}
         </Link>
@@ -88,7 +90,7 @@ const ProductCard = ({ product }) => {
               ${originalPrice}
             </span>
           )}
-          <span className="text-red-600 font-semibold">${price}</span>
+          <span className="text-red-600 font-semibold">${price ? (Array.isArray(price) ? price[0] : price):""}</span>
         </div>
 
         {/* Add to Cart button */}
