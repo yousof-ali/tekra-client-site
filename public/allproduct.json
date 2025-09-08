@@ -1,52 +1,43 @@
 [
   {
     "id": 1,
-    "name": "Xoggle aute et pariatur adipisicing nostrud et excepteur",
-    "category": "gaming console",
-    "price": 59.99,
-    "originalPrice": 79.01,
-    "discount": null,
+    "name": "Sony PlayStation 5 Pro",
+    "category": "Gaming console",
+    "price": 599.99,
     "rating": 4.5,
     "selling": 19,
     "reviewCount": 128,
-    "image": "https://shopo.quomodothemes.website/assets/images/product-img-1.jpg",
+    "image": "https://www.startech.com.bd/image/cache/catalog/gaming-console/playstation/playstation-5-pro/playstation-5-pro-500x500.webp",
     "allImages": [
-      "https://shopo.quomodothemes.website/assets/images/product-img-1.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-1.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-1.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-1.jpg"
+      "https://www.startech.com.bd/image/cache/catalog/gaming-console/playstation/playstation-5-pro/playstation-5-pro-02-74x74.webp"
     ],
     "inStock": true,
-    "description": "A premium gaming experience with immersive graphics. Designed for serious players. A premium gaming experience with immersive graphics. Designed for serious players.",
+    "description": "A premium wireless gaming headset with immersive 7.1 surround sound. Designed for serious players.",
     "fullDescription": "Experience unparalleled gaming performance with our premium gaming headset. Featuring 7.1 surround sound for precise audio positioning, memory foam ear cushions for extended comfort during long sessions, customizable RGB lighting, noise-cancelling microphone for crystal clear communication, and durable construction with adjustable headband. Perfect for competitive gaming where every sound matters.",
     "featured": [
-      "7.1 Surround Sound",
-      "Memory Foam Ear Cushions",
-      "Noise-Cancelling Microphone",
-      "Customizable RGB Lighting",
-      "Adjustable Headband",
-      "Durable Construction"
-    ]
+      "Up to 120fps with 120Hz Output",
+      "Advanced Ray Tracking - 4K TV Gaming",
+      "2TB Ultra-High Speed SSD",
+      "3D AudioTech, Wi-Fi 7 Compatible, PSSR"
+    ],
+    "colors": ["Midnight Black", "Arctic White"],
+    "storage": []
   },
   {
     "id": 2,
-    "name": "Geeky ipsum esse repreh est consequat",
+    "name": "Awei H21 Smart Watch",
     "category": "Smart Watch",
     "price": 79.99,
-    "originalPrice": 99.99,
-    "discount": 20,
     "rating": 4.3,
     "selling": 5,
     "reviewCount": 89,
-    "image": "https://shopo.quomodothemes.website/assets/images/product-img-2.jpg",
+    "image": "https://www.startech.com.bd/image/cache/catalog/smart-watch/awei/h21/h21-02-500x500.webp",
     "allImages": [
-      "https://shopo.quomodothemes.website/assets/images/product-img-2.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-2.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-2.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-2.jpg"
+      "https://www.startech.com.bd/image/cache/catalog/smart-watch/awei/h21/h21-04-74x74.webp",
+      "https://www.startech.com.bd/image/cache/catalog/smart-watch/awei/h21/h21-74x74.webp"
     ],
     "inStock": true,
-    "description": "Compact and efficient device for tech enthusiasts. Built with performance in mind. Compact and efficient device for tech enthusiasts. Built with performance in mind.",
+    "description": "Compact and efficient smartwatch for tech enthusiasts. Built with performance and health monitoring in mind.",
     "fullDescription": "This versatile smart home hub connects and controls all your compatible devices from one central location. Features include voice assistant integration, compatibility with 1000+ smart devices, easy setup through mobile app, energy monitoring capabilities, sleek minimalist design that fits any decor, and advanced security protocols to keep your home network safe.",
     "featured": [
       "Voice Assistant Integration",
@@ -55,27 +46,24 @@
       "Energy Monitoring",
       "Sleek Minimalist Design",
       "Advanced Security Protocols"
-    ]
+    ],
+    "colors": ["Black", "Silver Gold"],
+    "storage": []
   },
   {
     "id": 3,
-    "name": "Conjurica ea magna eiusmod esse cupt anim aliquip",
-    "category": "gaming console",
+    "name": "Razer DeathAdder Essential Gaming Mouse",
+    "category": "Gaming console",
     "price": 29.99,
-    "originalPrice": 59.29,
-    "discount": null,
     "rating": 4.2,
     "selling": 7,
     "reviewCount": 156,
-    "image": "https://shopo.quomodothemes.website/assets/images/product-img-3.jpg",
+    "image": "https://www.startech.com.bd/image/cache/catalog/gaming-console/microsoft/xbox-series-s/xbox-series-s-01-500x500.webp",
     "allImages": [
-      "https://shopo.quomodothemes.website/assets/images/product-img-3.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-3.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-3.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-3.jpg"
+      "https://www.startech.com.bd/image/cache/catalog/gaming-console/microsoft/xbox-series-s/xbox-series-s-01-500x500.webp"
     ],
     "inStock": true,
-    "description": "Enjoy fast-paced action with this budget-friendly choice. Sleek and powerful design. Enjoy fast-paced action with this budget-friendly choice. Sleek and powerful design.",
+    "description": "Enjoy fast-paced action with this budget-friendly gaming mouse. Sleek and powerful design.",
     "fullDescription": "This budget-friendly gaming mouse delivers performance beyond its price point. Features high-precision 6400 DPI optical sensor for accurate tracking, 6 programmable buttons for custom macros, RGB lighting with multiple effects, ergonomic design for comfortable grip during extended sessions, durable Omron switches rated for 10 million clicks, and braided cable for increased longevity.",
     "featured": [
       "6400 DPI Optical Sensor",
@@ -84,27 +72,26 @@
       "Ergonomic Design",
       "Durable Omron Switches",
       "Braided Cable"
-    ]
+    ],
+    "colors": ["Carbon Black", "Stealth Grey", "Racing Red"],
+    "storage": ["512GB", "1TB"]
   },
   {
     "id": 4,
-    "name": "Senmei ipsum dolore eiusmod dolor officia do nisi",
-    "category": "laptop",
+    "name": "AOC N141 Intel N100 12th Gen 14-Inch FHD Laptop",
+    "category": "Laptop",
     "price": 1299.99,
-    "originalPrice": 1499.99,
-    "discount": 13,
     "rating": 4.7,
     "selling": 0,
     "reviewCount": 45,
-    "image": "https://shopo.quomodothemes.website/assets/images/product-img-4.jpg",
+    "image": "https://www.startech.com.bd/image/cache/catalog/laptop/aoc/n141/aoc-n141-01-500x500.webp",
     "allImages": [
-      "https://shopo.quomodothemes.website/assets/images/product-img-4.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-4.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-4.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-4.jpg"
+      "https://www.startech.com.bd/image/cache/catalog/laptop/aoc/n141/aoc-n141-02-74x74.webp",
+      "https://www.startech.com.bd/image/cache/catalog/laptop/aoc/n141/aoc-n141-03-74x74.webp",
+      "https://www.startech.com.bd/image/cache/catalog/laptop/aoc/n141/aoc-n141-04-74x74.webp"
     ],
     "inStock": true,
-    "description": "Top-tier computing performance for professionals. Perfect for multitasking workloads. Top-tier computing performance for professionals. Perfect for multitasking workloads.",
+    "description": "Top-tier computing performance for professionals. Perfect for multitasking workloads.",
     "fullDescription": "Professional-grade laptop designed for demanding workloads. Features Intel Core i7-11800H processor, 16GB DDR4 RAM, 1TB NVMe SSD storage, NVIDIA RTX 3050 Ti graphics, 15.6-inch 4K OLED display with 100% DCI-P3 color gamut, Thunderbolt 4 ports, backlit keyboard with numeric pad, Windows 11 Pro, and all-day battery life. Perfect for content creators, developers, and professionals who need power on the go.",
     "featured": [
       "Intel Core i7-11800H Processor",
@@ -114,12 +101,14 @@
       "15.6-inch 4K OLED Display",
       "Thunderbolt 4 Ports",
       "All-day Battery Life"
-    ]
+    ],
+    "colors": ["Frost Grey", "Mystic Silver"],
+    "storage": ["512GB SSD", "1TB SSD"]
   },
   {
     "id": 5,
-    "name": "Redmi Note 14",
-    "category": "mobile",
+    "name": "Xiaomi Redmi Note 14",
+    "category": "Mobile",
     "price": [299.99, 399.99],
     "rating": 4.4,
     "selling": 13,
@@ -143,28 +132,24 @@
       "Under-display Fingerprint Sensor"
     ],
     "colors": ["Midnight Black", "Ocean Blue", "Lime Green", "Sand Gold"],
-    "sotorages": ["6GB/128GB", "8GB/256GB"]
+    "storage": ["6GB/128GB", "8GB/256GB"]
   },
-
   {
     "id": 7,
-    "name": "Kenegy consectetur id ex nulla in adipisicing deserunt",
+    "name": "Apple AirPods 3rd generation with Charging Case",
     "category": "AirPods",
     "price": 34.99,
-    "originalPrice": null,
-    "discount": null,
     "rating": 4.6,
     "selling": 12,
     "reviewCount": 92,
-    "image": "https://shopo.quomodothemes.website/assets/images/product-img-7.jpg",
+    "image": "https://www.startech.com.bd/image/cache/catalog/earbuds/apple/airpods-3rd-generation/airpods-3rd-generation-01-500x500.webp",
     "allImages": [
-      "https://shopo.quomodothemes.website/assets/images/product-img-7.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-7.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-7.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-7.jpg"
+      "https://www.startech.com.bd/image/cache/catalog/earbuds/apple/airpods-3rd-generation/airpods-3rd-generation-03-74x74.webp",
+      "https://www.startech.com.bd/image/cache/catalog/earbuds/apple/airpods-3rd-generation/airpods-3rd-generation-02-74x74.webp",
+      "https://www.startech.com.bd/image/cache/catalog/earbuds/apple/airpods-3rd-generation/airpods-3rd-generation-04-74x74.webp"
     ],
     "inStock": true,
-    "description": "Reliable electronics built for durability. Great value for everyday use. Reliable electronics built for durability. Great value for everyday use.",
+    "description": "Reliable wireless earbuds built for durability and great sound. Great value for everyday use.",
     "fullDescription": "Premium wireless earbuds with active noise cancellation. Features hybrid active noise cancellation technology, 30-hour total battery life with charging case, IPX5 water resistance, touch controls for music and calls, Bluetooth 5.2 connectivity, low latency gaming mode, customizable EQ through mobile app, comfortable secure fit with multiple ear tip sizes, and voice assistant support.",
     "featured": [
       "Hybrid Active Noise Cancellation",
@@ -174,27 +159,28 @@
       "Low Latency Gaming Mode",
       "Customizable EQ",
       "Voice Assistant Support"
-    ]
+    ],
+    "colors": ["Classic White", "Midnight Black", "Coral Pink"],
+    "storage": []
   },
   {
     "id": 8,
-    "name": "Bizmatic consequat enim quis sit et est eiusmod",
-    "category": "headphone",
+    "name": "Havit H220D Wired Headphone",
+    "category": "Headphone",
     "price": 89.99,
     "originalPrice": 119.99,
     "discount": 25,
     "rating": 4.3,
     "selling": 25,
     "reviewCount": 178,
-    "image": "https://shopo.quomodothemes.website/assets/images/product-img-8.jpg",
+    "image": "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h220d/h220d-01-500x500.webp",
     "allImages": [
-      "https://shopo.quomodothemes.website/assets/images/product-img-8.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-8.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-8.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-8.jpg"
+      "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h220d/h220d-02-74x74.webp",
+      "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h220d/h220d-03-74x74.webp",
+      "https://www.startech.com.bd/image/cache/catalog/headphone/havit/h220d/h220d-04-74x74.webp"
     ],
     "inStock": true,
-    "description": "Crystal clear audio with deep bass. Ideal for music lovers and audiophiles. Crystal clear audio with deep bass. Ideal for music lovers and audiophiles.",
+    "description": "Crystal clear audio with deep bass. Ideal for music lovers and audiophiles.",
     "fullDescription": "High-fidelity bookshelf speakers with exceptional sound quality. Features 5.25-inch woven fiberglass woofers, 1-inch silk dome tweeters, 100W peak power handling, rear-firing bass port for extended low frequencies, magnetic shielding for placement near displays, professional-grade crossover network, real wood veneer finish, and gold-plated binding posts. Perfect for stereo music listening and home theater setups.",
     "featured": [
       "5.25-inch Woven Fiberglass Woofers",
@@ -204,28 +190,28 @@
       "Magnetic Shielding",
       "Professional-grade Crossover",
       "Real Wood Veneer Finish"
-    ]
+    ],
+    "colors": ["Black Oak", "Walnut Brown"],
+    "storage": []
   },
-
   {
     "id": 9,
-    "name": "Anarco consectetur magna nostrud commodo tempor aliqua..",
-    "category": "headphone",
+    "name": "Sony PlayStation VR2",
+    "category": "VR",
     "price": 149.99,
     "originalPrice": 199.99,
     "discount": 25,
     "rating": 4.5,
     "selling": 29,
     "reviewCount": 134,
-    "image": "https://shopo.quomodothemes.website/assets/images/product-img-9.jpg",
+    "image": "https://www.startech.com.bd/image/cache/catalog/vr-set/sony/playstation-vr2/playstation-vr2-01-500x500.webp",
     "allImages": [
-      "https://shopo.quomodothemes.website/assets/images/product-img-9.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-9.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-9.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-9.jpg"
+      "https://www.startech.com.bd/image/cache/catalog/vr-set/sony/playstation-vr2/playstation-vr2-02-74x74.webp",
+      "https://www.startech.com.bd/image/cache/catalog/vr-set/sony/playstation-vr2/playstation-vr2-03-74x74.webp",
+      "https://www.startech.com.bd/image/cache/catalog/vr-set/sony/playstation-vr2/playstation-vr2-04-74x74.webp"
     ],
     "inStock": true,
-    "description": "High-definition sound with noise isolation. Designed for immersive listening. High-definition sound with noise isolation. Designed for immersive listening.",
+    "description": "High-definition sound with noise isolation. Designed for immersive listening.",
     "fullDescription": "Professional studio headphones for critical listening and music production. Features 40mm neodymium drivers with extended frequency response, circumaural design with memory foam ear pads, foldable design for portability, detachable oxygen-free copper cable, ¼-inch adapter included, minimal sound leakage, comfortable for extended wearing sessions, and rugged construction for durability in studio environments.",
     "featured": [
       "40mm Neodymium Drivers",
@@ -235,43 +221,45 @@
       "Detachable Cable",
       "Minimal Sound Leakage",
       "Rugged Construction"
-    ]
+    ],
+    "colors": ["Matte Black", "Gun Metal"],
+    "storage": []
   },
   {
     "id": 10,
-    "name": "Plasto cillum ad minim elit fugiat esse dolore",
-    "category": "smart tv",
+    "name": "Smart SEL-32B24K 32-Inch HD Basic LED TV",
+    "category": "Smart tv",
     "price": 499.99,
     "originalPrice": null,
     "discount": null,
     "rating": 3.8,
     "selling": 22,
     "reviewCount": 89,
-    "image": "https://shopo.quomodothemes.website/assets/images/product-img-10.jpg",
+    "image": "https://www.startech.com.bd/image/cache/catalog/television/smart/sel-24l22ks/sel-24l22ks-01-500x500.webp",
     "allImages": [
-      "https://shopo.quomodothemes.website/assets/images/product-img-10.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-10.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-10.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-10.jpg"
+      "https://www.startech.com.bd/image/cache/catalog/television/smart/sel-32b24k/sel-32b24k-02-74x74.webp",
+      "https://www.startech.com.bd/image/cache/catalog/television/smart/sel-32b24k/sel-32b24k-02-74x74.webp",
+      "https://www.startech.com.bd/image/cache/catalog/television/smart/sel-32b24k/sel-32b24k-04-74x74.webp"
     ],
     "inStock": true,
-    "description": "Experience next-gen gaming at high frame rates. Built for serious performance. Experience next-gen gaming at high frame rates. Built for serious performance.",
-    "fullDescription": "High-performance gaming monitor with exceptional response times. Features 27-inch QHD (2560x1440) IPS display, 165Hz refresh rate, 1ms response time, NVIDIA G-SYNC compatibility, HDR400 support, 99% sRGB color coverage, adjustable stand with height, tilt and swivel, AMD FreeSync Premium, built-in gaming modes, and flicker-free technology with blue light filter for extended gaming sessions.",
+    "description": "Experience next-gen gaming at high frame rates. Built for serious performance.",
+    "fullDescription": "High-performance gaming monitor with exceptional response times. Features 32-inch QHD (2560x1440) IPS display, 165Hz refresh rate, 1ms response time, NVIDIA G-SYNC compatibility, HDR400 support, 99% sRGB color coverage, adjustable stand with height, tilt and swivel, AMD FreeSync Premium, built-in gaming modes, and flicker-free technology with blue light filter for extended gaming sessions.",
     "featured": [
-      "27-inch QHD IPS Display",
+      "32-inch QHD IPS Display",
       "165Hz Refresh Rate",
       "1ms Response Time",
       "NVIDIA G-SYNC Compatible",
       "HDR400 Support",
       "99% sRGB Color Coverage",
-      "Adjustable Stand"
-    ]
+      "1x USB, 2x HDMi, Audio Line Out"
+    ],
+    "colors": ["Black"]
   },
   {
     "id": 6,
     "name": "OPPO A3x",
-    "category": "mobile",
-    "price": [244.99,344.99],
+    "category": "Mobile",
+    "price": [244.99, 344.99],
     "rating": 4.1,
     "selling": 44,
     "reviewCount": 67,
@@ -283,8 +271,8 @@
       "https://www.startech.com.bd/image/cache/catalog/mobile/oppo/a3x/a3x-4g-nebula-red-3-74x74.webp"
     ],
     "inStock": true,
-    "description": "The OPPO A3x is a stylish and budget-friendly smartphone designed to meet your everyday needs with its impressive features. A remarkable display that enhances your viewing experience in every way. ",
-    "fullDescription": "This budget smartphone boasts a 6.67-inch HD+ display with a 90Hz refresh rate, providing vibrant and smooth visuals for an immersive viewing experience. Powered by a Qualcomm Snapdragon 6s Gen 1 processor and 4GB of RAM, this Oppo A3x smartphone ensures efficient performance and smooth multitasking. With options for 64GB or 128GB of internal storage, expandable via microSDXC, you'll have ample space for all your apps, photos, and videos. ",
+    "description": "The OPPO A3x is a stylish and budget-friendly smartphone designed to meet your everyday needs with its impressive features. A remarkable display that enhances your viewing experience in every way.",
+    "fullDescription": "This budget smartphone boasts a 6.67-inch HD+ display with a 90Hz refresh rate, providing vibrant and smooth visuals for an immersive viewing experience. Powered by a Qualcomm Snapdragon 6s Gen 1 processor and 4GB of RAM, this Oppo A3x smartphone ensures efficient performance and smooth multitasking. With options for 64GB or 128GB of internal storage, expandable via microSDXC, you'll have ample space for all your apps, photos, and videos.",
     "featured": [
       "6.71-Inch HD+ 90Hz IPS Dot Drop Display",
       "Qualcomm Snapdragon 6s Gen 1",
@@ -294,27 +282,26 @@
       "Safety Protections"
     ],
     "colors": ["Ocean Blue", "Nebula Red"],
-    "sotorages": ["4GB/64GB", "4GB/128GB"]
+    "storage": ["4GB/64GB", "4GB/128GB"]
   },
   {
     "id": 11,
-    "name": "Conjurica ea magna eiusmod esse cupt anim aliquip",
-    "category": "gaming console",
-    "price": 69.99,
-    "originalPrice": 79.99,
+    "name": "Chuwi HeroBook Pro Intel Celeron",
+    "category": "Laptop",
+    "price": 669.99,
+    "originalPrice": 799.99,
     "discount": 12,
     "rating": 4.6,
     "selling": 2,
     "reviewCount": 156,
-    "image": "https://shopo.quomodothemes.website/assets/images/product-img-1.jpg",
+    "image": "https://www.startech.com.bd/image/cache/catalog/laptop/chuwi/herobook/herobook-pro/herobook-pro-1-500x500.jpg",
     "allImages": [
-      "https://shopo.quomodothemes.website/assets/images/product-img-1.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-1.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-1.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-1.jpg"
+      "https://www.startech.com.bd/image/cache/catalog/laptop/chuwi/herobook/herobook-pro/herobook-pro-2-74x74.jpg",
+      "https://www.startech.com.bd/image/cache/catalog/laptop/chuwi/herobook/herobook-pro/herobook-pro-3-74x74.jpg",
+      "https://www.startech.com.bd/image/cache/catalog/laptop/chuwi/herobook/herobook-pro/herobook-pro-4-74x74.jpg"
     ],
     "inStock": true,
-    "description": "Smooth gameplay and responsive controls. A great pick for casual gamers. Smooth gameplay and responsive controls. A great pick for casual gamers.",
+    "description": "Smooth gameplay and responsive mechanical keys. A great pick for casual and competitive gamers.",
     "fullDescription": "Mechanical gaming keyboard with customizable RGB lighting. Features Cherry MX Red switches for smooth linear keystrokes, full RGB backlighting with software customization, aluminum top plate for durability, dedicated media controls, N-key rollover, detachable USB-C cable, programmable macro keys, and ergonomic design with adjustable feet. Perfect for gamers who want responsive tactile feedback.",
     "featured": [
       "Cherry MX Red Switches",
@@ -324,27 +311,24 @@
       "N-key Rollover",
       "Detachable USB-C Cable",
       "Programmable Macro Keys"
-    ]
+    ],
+    "colors": ["Black", "White"],
+    "storage": ["8GB/256GB"]
   },
   {
     "id": 12,
-    "name": "Empirica deserunt laborum ad quis labore labore eu",
-    "category": "tablet",
+    "name": "Walton Walpad 8G Tablet",
+    "category": "Tablet",
     "price": 129.99,
-    "originalPrice": 159.99,
-    "discount": 19,
     "rating": 4.4,
     "selling": 2,
     "reviewCount": 78,
-    "image": "https://shopo.quomodothemes.website/assets/images/product-img-2.jpg",
+    "image": "https://www.startech.com.bd/image/cache/catalog/tablet-pc/walton/walpad-8g/walpad-8g-01-500x500.webp",
     "allImages": [
-      "https://shopo.quomodothemes.website/assets/images/product-img-2.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-2.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-2.jpg",
-      "https://shopo.quomodothemes.website/assets/images/product-img-2.jpg"
+      "https://www.startech.com.bd/image/cache/catalog/tablet-pc/walton/walpad-8g/walpad-8g-01-500x500.webp"
     ],
     "inStock": true,
-    "description": "Premium build with advanced tech features. A sleek upgrade for your setup. Premium build with advanced tech features. A sleek upgrade for your setup.",
+    "description": "Premium build with advanced tech features. A sleek upgrade for your setup.",
     "fullDescription": "Ultra-slim external SSD with blazing fast transfer speeds. Features USB 3.2 Gen 2 interface with up to 1050MB/s read speeds, capacities up to 2TB, shock-resistant metal enclosure, hardware encryption for data security, compact pocket-sized design, backward compatible with USB 3.0/2.0, included USB-C to C and USB-C to A cables, and 3-year limited warranty. Perfect for photographers, videographers, and professionals needing fast portable storage.",
     "featured": [
       "1050MB/s Read Speeds",
@@ -354,6 +338,8 @@
       "Compact Pocket-sized Design",
       "Backward Compatible",
       "3-year Warranty"
-    ]
+    ],
+    "colors": ["Silver"],
+    "storage": ["64GB"]
   }
 ]
