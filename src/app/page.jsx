@@ -24,9 +24,9 @@ const Home = () => {
 
       <PromotionalAds1/>
 
-      <GamerWorld />
+      {/* <GamerWorld /> */}
 
-      <TopSelling />
+      {/* <TopSelling /> */}
 
       <div className="mx-auto flex gap-4 md:gap-6 lg:gap-8 flex-col sm:flex-row max-w-7xl px-4">
         <div className="w-full sm:w-1/2">
@@ -38,7 +38,7 @@ const Home = () => {
 
       </div>
 
-      <PopularSales />
+      {/* <PopularSales /> */}
 
       <FlashSale />
 

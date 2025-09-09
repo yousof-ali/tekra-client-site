@@ -1,27 +1,28 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query"
+import useAxiosPublic from "./useAxiosPublic"
 
-export default function useAllProducts() {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    setLoading(true);
-    const fetchProducts = async () => {
-      try {
-        const res = await fetch("/allproduct.json"); 
-        const result = await res.json();
-        setData(result);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
 
-    fetchProducts();
-  }, []);
+const useAllProducts = () => {
 
-  return [data, loading ];
-}
+  const axiosPublic = useAxiosPublic();
+
+  const {
+    data:products = [],
+    isLoading,
+    isError,
+    error,
+    refetch
+  } = useQuery({
+    queryKey:['products'],
+    queryFn:async() => {
+      const res = await axiosPublic.get('/products');
+      return res.data
+    }
+  });
+  return[products,isLoading,isError,error,refetch];
+};
+
+export default useAllProducts;

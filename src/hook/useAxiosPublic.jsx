@@ -1,10 +1,16 @@
-import axios from 'axios';
+import axios from "axios";
+
 
 const axiosPublic = axios.create({
-    baseURL:'baseURL'
-})
-const userAxiosPublic = () => {
+    baseURL:'http://localhost:5000',
+    headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+const useAxiosPublic = () => {
     return axiosPublic;
 };
 
-export default userAxiosPublic;
+export default useAxiosPublic;
+
