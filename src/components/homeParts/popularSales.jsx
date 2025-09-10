@@ -13,8 +13,8 @@ return(
           <div className="flex justify-between items-center">
             <h2 className="sectionHeading">Popular Sales</h2>
             <div>
-              <Link className="flex text-base" href="/shop">
-                View More <ArrowRight />
+              <Link className="flex text-sm items-center md:text-base" href="/shop">
+                View More <ArrowRight className="w-4" />
               </Link>
             </div>
           </div>

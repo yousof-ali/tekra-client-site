@@ -1,41 +1,15 @@
 "use client";
 
-import { Products } from "@/utils/utils";
 import { ArrowRight } from "lucide-react";
 import ProductCard from "../productCard";
 import Link from "next/link";
 
 import ProductCard1Skeletion from "../productCard1skeleton";
-import { useState } from "react";
-import useAxiosPublic from "@/hook/useAxiosPublic";
-// import useAllProducts from "@/hook/useAllProduct";
+import useAllProducts from "@/hook/useAllProduct";
+
 const NewArrivals = () => {
-  // const {products,isLoading} = useAllProducts();
-
-  const [isLoading, setloading] = useState(true);
-  const [products, setproduct] = useState([]);
-  const axiosPublic = useAxiosPublic();
-
-  useState(() => {
-    // fetch('http://localhost:5000/products')
-    // .then(res => res.json())
-    // .then(result => {
-    //       setproduct(result);
-    //       setloading(false)
-    //       console.log(result)
-    // })
-    const allData = async() => {
-      setloading(true);
-      const res = await axiosPublic.get('/products');
-      setproduct(res.data),
-      setloading(false);
-    }
-    allData()
-
-}, [axiosPublic])
-
-
-
+  const [products,isLoading] = useAllProducts();
+  
 return (
   <section>
     <div className="max-w-7xl mx-auto mt-12 px-4">
@@ -47,8 +21,8 @@ return (
           New Arrivals
         </h2>
         <div>
-          <Link className="flex text-base" href="/shop">
-            View More <ArrowRight />
+          <Link className="flex text-sm items-center md:text-base" href="/shop">
+            View More <ArrowRight className="w-4" />
           </Link>
         </div>
       </div>

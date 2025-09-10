@@ -39,7 +39,7 @@ const CategorySlider = () => {
         }}
         breakpoints={{
           0: {
-            slidesPerView: 3.5,  
+            slidesPerView: 3,  
             spaceBetween: 8,
           },
           500: {
@@ -60,7 +60,7 @@ const CategorySlider = () => {
           <SwiperSlide key={indx} className="flex justify-center">
             <div
               className="border group rounded-md flex justify-center bg-white items-center flex-col 
-                         p-2 sm:p-3 py-0 md:py-4 transition-all duration-400 hover:border-[#276680] hover:shadow-xs"
+                         p-2 sm:p-3 py-2 md:py-4 transition-all duration-400 hover:border-[#276680] hover:shadow-xs"
             >
               <Image
                 alt={category.name}
@@ -70,7 +70,7 @@ const CategorySlider = () => {
                 quality={100}
                 className="w-6 sm:w-12"
               />
-              <h3 className="text-[8px] group-hover:text-[#276680] text-gray-500 sm:text-xs text-center mt-3 md:mt-4 ">
+              <h3 className="text-[8px] group-hover:text-[#276680] text-gray-500 sm:text-xs text-center mt-2 md:mt-4 ">
                 {category.name}
               </h3>
             </div>

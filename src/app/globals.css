@@ -122,7 +122,7 @@
 }
 
 .sectionHeading {
-  @apply text-xl sm:text-3xl text-[#1d1d1d] font-semibold;
+  @apply text-xl sm:text-2xl lg:text-3xl text-[#1d1d1d] font-semibold;
 }
 
 @keyframes pulse {

@@ -17,7 +17,7 @@ import Link from "next/link";
 export default function Navbar() {
   
   return (
-    <header className=" sticky top-0 border-b  bg-white z-60">
+    <header className=" sticky top-0 border-b  bg-white z-50">
         <div className="flex  mx-auto max-w-7xl py-5 px-2 justify-between items-center">
           <div className="block lg:hidden">
             <MobileMenuToggleBtn/>
@@ -25,7 +25,7 @@ export default function Navbar() {
           <div>
             <Image src="/logo.png" alt="logo" width={150} height={50} />
           </div>
-          <div className="border justify-between gap-2 lg:flex items-center hidden w-[500px]">
+          <div className="border rounded-md overflow-hidden justify-between gap-2 lg:flex items-center hidden w-[500px]">
             <div className="text-xs">
               <input
                 className="outline-0 w-[250px] border-r-1 pl-3 py-2"
@@ -47,7 +47,7 @@ export default function Navbar() {
             </div>
             <div>
               <Button className={'rounded-none'} >
-                <Search/> Search
+                <Search/> 
               </Button>
             </div>
           </div>

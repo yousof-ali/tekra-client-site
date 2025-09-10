@@ -10,18 +10,15 @@ const ProductCardSecond = ({ product }) => {
     originalPrice,
     discount,
     rating,
-    reviewCount,
-    images,
-    badge,
-    inStock,
+    image,
   } = product;
   return (
-    <div className="bg-white group shadow-xs items-center flex relative  overflow-hidden">
+    <div className="bg-white group rounded-md shadow-xs items-center flex relative  overflow-hidden">
       {/* Image Wrapper with fixed size */}
       <div className="w-1/3  bg-white">
         <Image
           alt="Product Image"
-          src={images}
+          src={image}
           width={200}
           height={200}
           quality={100}
@@ -34,7 +31,7 @@ const ProductCardSecond = ({ product }) => {
         {/* Rating */}
         <div className="flex items-center space-x-1 ">
           {[...Array(Math.floor(rating))].map((_, index) => (
-            <span key={index} className="text-yellow-500 text-2xl">
+            <span key={index} className="text-yellow-500 text-sm md:text-xl">
               ★
             </span>
           ))}
@@ -46,15 +43,15 @@ const ProductCardSecond = ({ product }) => {
         </p>
 
         {/* Price Section */}
-        <div className="mt-3 text-base md:text-lg">
+        <div className="mt-2 text-lg">
           {originalPrice && (
             <span className="line-through text-gray-400 mr-2">
               ${originalPrice}
             </span>
           )}
-
-          <span className="text-red-600 font-semibold">${price}</span>
+          <span className="text-red-600 font-semibold">${price ? (Array.isArray(price) ? price[0] : price) : ""}</span>
         </div>
+
         <div className="mt-4">
           <Button>Add to Cart</Button>
         </div>

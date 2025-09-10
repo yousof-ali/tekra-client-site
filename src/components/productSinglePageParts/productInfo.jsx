@@ -1,163 +1,210 @@
 "use client";
 
 import Image from "next/image";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
+
 import { useState } from "react";
-import { Flag, Heart } from "lucide-react";
+import { Heart, Minus, Plus } from "lucide-react";
 import { Button } from "../ui/button";
 import facebook from "@/asset/singleProductImages/facebook.png";
 import twitter from "@/asset/singleProductImages/twitter.png";
 import pinterest from "@/asset/singleProductImages/pinterest.png";
-import useSingleProduct from "@/hook/useSingleProduct";
+import { useParams } from "next/navigation";
+import useAxiosPublic from "@/hook/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import ProductInfoSkeleton from "../productInfoSkeleton";
+
 
 const ProductInfo = () => {
-  const [color, setColour] = useState("red");
-  const { singleProduct,loading } = useSingleProduct();
-  console.log(singleProduct)
-  if(loading){
-    return(
-      <p>Loading...k.</p>
-    )
-  }
+
+  const axiosPublic = useAxiosPublic();
+  const { id } = useParams();
+
+  const {
+    data: product = {},
+    isLoading,
+    error,
+    refetch
+  } = useQuery({
+    queryKey: ['product', id],
+    queryFn: async () => {
+      if (!id) return null;
+      const res = await axiosPublic.get(`/product/${id}`);
+      return res.data
+    },
+    enabled: !!id,
+  });
+
+
+  const rating = product?.rating ?? 0;
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 >= 0.5;
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+
+  const [color, setColor] = useState("")
+  const [storage, setStorage] = useState("")
+
   return (
     <>
-      <div className="mx-4 flex flex-col my-8 gap-12 lg:flex-row">
-        <div className="w-full lg:w-1/2">
-          <div>
-            <Image
-              src={singleProduct?.image}
-              alt="product"
-              width={400}
-              height={400}
-              quality={100}
-              className=" border p-4 sm:p-8 lg:p-10 w-full h-60 rounded-md  sm:h-72 md:h-80 lg:h-[400px] object-contain"
-            />
-          </div>
-          <div className="lg:mt-4 mt-2 flex-wrap lg:gap-4 gap-2 flex">
-            {singleProduct?.allImages?.map((im, indx) => {
-              return (
-                <Image
-                  src={im}
-                  key={indx}
-                  alt="product"
-                  width={100}
-                  height={200}
-                  quality={100}
-                  className="border w-16 h-16 rounded-md sm:w-24 sm:h-24  md:p-4 p-2"
-                />
-              );
-            })}
-          </div>
-        </div>
-        <div className="w-full lg:w-1/2">
-          <h4 className="text-xs lg:text-sm text-gray-500 font-semibold uppercase mb-2">
-            {singleProduct?.category}
-          </h4>
+      {
+        isLoading ? <ProductInfoSkeleton /> : <div className="mx-4 flex flex-col my-8 gap-12 md:flex-row">
+          <div className="w-full lg:w-1/2">
+            <div className="border relative rounded-md">
+              <Image
+                src={product?.image}
+                alt="product"
+                width={400}
+                height={400}
+                quality={100}
+                className="  p-4 sm:p-8 lg:p-10 w-full h-60  sm:h-72 md:h-80 lg:h-[400px] object-contain"
+              />
+              <div className="absolute top-4 left-4">
+                <Heart className="text-gray-400" />
+              </div>
+            </div>
+            <div className="lg:mt-4 mt-2  flex-wrap lg:gap-4 gap-2 flex">
+              {product?.allImages?.map((im, indx) => {
+                return (
+                  <Dialog key={indx}>
+                    <DialogTrigger asChild>
+                      <Image
+                        src={im}
+                        alt="product"
+                        width={100}
+                        height={200}
+                        quality={100}
+                        className="border cursor-pointer w-16 h-16 rounded-md sm:w-24 sm:h-24  md:p-4 p-2"
+                      />
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-md">
+                      <DialogHeader>
+                        <DialogTitle></DialogTitle>
+                        <DialogDescription>
+                          <div className="flex justify-center items-center">
+                            <Image
+                              src={im}
+                              alt="img"
+                              width={1000}
+                              height={1000}
+                              quality={100}
+                              className="object-cover"
+                            />
+                          </div>
+                        </DialogDescription>
+                      </DialogHeader>
 
-          <h2 className="text-base sm:text-lg  md:text-xl lg:text-2xl">
-            {singleProduct?.name}
-          </h2>
+                      <DialogFooter className="sm:justify-start">
 
-          <div className="flex items-center mt-2 space-x-1 ">
-            {/* {[...Array(Math.floor(singleProduct?.rating))].map((_, index) => (
-              <span key={index} className="text-yellow-500 text-2xl">
-                ★
+                      </DialogFooter>
+                    </DialogContent>
+                  </Dialog>
+                );
+              })}
+            </div>
+          </div>
+          <div className="w-full lg:w-1/2">
+            <h4 className="text-xs lg:text-sm text-gray-500 font-semibold uppercase mb-2">
+              {product?.category}
+            </h4>
+
+            <h2 className="text-base sm:text-lg  md:text-xl lg:text-2xl">
+              {product?.name}
+            </h2>
+
+            <div className="flex items-center space-x-2 ">
+              <div className="flex items-center">
+
+                {[...Array(fullStars)].map((_, i) => (
+                  <span key={i} className="text-yellow-500 text-xl">★</span>
+                ))}
+
+                {hasHalfStar && <span className="text-yellow-500 text-xl">☆</span>}
+
+                {[...Array(emptyStars)].map((_, i) => (
+                  <span key={i} className="text-gray-300 text-xl">★</span>
+                ))}
+
+              </div>
+
+              <span className="text-xs text-gray-500 lg:text-sm">
+                {product?.reviewCount} reviews
               </span>
-            ))}{" "} */}
-            <span className="text-xs text-gray-500 lg:text-sm">
-              {singleProduct?.reviewCount} reviews
-            </span>
-          </div>
+            </div>
 
-          <div className="mt-4 text-base">
-            {singleProduct?.originalPrice && (
-              <span className="line-through text-gray-400 mr-4">
-                ${singleProduct?.originalPrice}
+            <div className="mt-4 text-base">
+              {product?.originalPrice && (
+                <span className="line-through text-gray-400 mr-4">
+                  ${product?.originalPrice}
+                </span>
+              )}
+
+              <span className="text-red-600 text-xl font-semibold">
+                ${typeof product?.price === 'object' ? product.price[0] : product.price}
               </span>
+            </div>
+
+            <p className="text-xs mt-3 lg:mt-6 lg:text-base text-gray-600 md:text-sm">
+              {product?.description}
+            </p>
+
+            <div className="mt-3 lg:mt-5">
+              <h2 className="text-xs lg:text-sm  font-semibold uppercase mb-2">COLOR</h2>
+              <div className="flex flex-wrap gap-2">
+                {
+                  product?.colors?.map((col, indx) => {
+                    return (<div onClick={() => setColor(col)} key={indx} className={`border ${col === color ? "bg-[#276680] text-white" : ""} text-xs p-2 text-gray-500 cursor-pointer lg:text-sm rounded`}>{col}</div>)
+                  })
+                }
+
+              </div>
+            </div>
+
+            {product?.storage?.length > 0 && (
+              <div className="mt-3 lg:mt-5">
+                <h2 className="text-xs lg:text-sm  font-semibold uppercase mb-2">
+                  SIZE / STORAGE
+                </h2>
+                <div className="flex gap-2">
+                  {product.storage.map((stor, indx) => (
+                    <div
+                      onClick={() => setStorage(stor)}
+                      key={indx}
+                      className={`border ${storage === stor ? "bg-[#276680] text-white" : ""
+                        } text-xs p-2 cursor-pointer text-gray-500 lg:text-sm rounded`}
+                    >
+                      {stor}
+                    </div>
+                  ))}
+                </div>
+              </div>
             )}
 
-            <span className="text-red-600 text-xl font-semibold">
-              ${singleProduct?.price}
-            </span>
-          </div>
-
-          <p className="text-xs mt-6 lg:text-base text-gray-600 md:text-sm">
-            {singleProduct?.description}
-          </p>
-
-          <div className="mt-7">
-            <h2 className="text-sm font-normal">COLOR</h2>
-            <div className="flex gap-4 mt-4">
-              {["red", "green", "blue"].map((c) => (
-                <div
-                  key={c}
-                  onClick={() => setColour(c)}
-                  className={`h-7 w-7 rounded-full cursor-pointer bg-${c}-500 ${
-                    color === c ? `ring-2 ring-${c}-500` : ""
-                  }`}
-                ></div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-7">
-            <h2 className="text-sm font-normal">SIZE</h2>
-            <Select>
-              <SelectTrigger className="md:py-6 py-5 mt-2 rounded-none max-w-[400px] w-full border shadow-none text-xs outline-none focus:outline-none focus:ring-0">
-                <SelectValue placeholder="Category" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="small">Small</SelectItem>
-                <SelectItem value="medium">Medium</SelectItem>
-                <SelectItem value="large">Large</SelectItem>
-                <SelectItem value="extra large">Extra Large</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div className="flex mt-7 gap-2 sm:gap-4 justify-between">
-            <div className="border px-2 sm:px-8 flex items-center text-lg justify-center gap-3">
-              <span className="cursor-pointer  text-gray-500">-</span>
-              <span>17</span>
-              <span className="cursor-pointer text-gray-500">+</span>
-            </div>
-            <div className="border px-2 sm:px-5 flex items-center justify-center">
-              <Heart className="text-gray-500 md:h-9 md:w-9" />
-            </div>
-            <div className="w-full">
-              <Button size={"lg"} className=" w-full ">
-                Add to Cart
-              </Button>
-            </div>
-          </div>
-
-          <div className="mt-7 space-y-2">
-            <p className="text-sm md:text-base">
-              Category : <span className="text-gray-500">{singleProduct?.category}</span>
-            </p>
-
-            <p className="text-sm md:text-base">
-              Tags : <span className="text-gray-500">Beer, Foamer</span>
-            </p>
-
-            <p className="text-sm md:text-base">
-              SKU : <span className="text-gray-500">Ke-91039</span>
-            </p>
-          </div>
-
-          <div>
-            <div className="text-sm flex text-red-500 gap-2 items-center  font-semibold mt-5 mb-3 md:text-base">
-              <Flag />
-              <span className=" cursor-pointer "> Report This Item</span>
+            <div className="mt-3 lg:mt-5">
+              <h2 className="text-xs lg:text-sm  font-semibold uppercase mb-2">Status</h2>
+              <p className="text-xs text-gray-500 lg:text-sm">{product?.inStock ? "In Stock" : "Stock Out"}</p>
             </div>
 
-            <div className="flex gap-2 items-center">
+            <div className="flex mt-4 lg:mt-7 gap-2 sm:gap-4 justify-between">
+              <div className="border  flex items-center text-lg justify-center">
+                <Button className={"h-full  rounded-none"}><Plus /></Button>
+                <span className=" px-2 lg:px-4">17</span>
+                <Button className={"h-full rounded-none"} ><Minus /></Button>
+              </div>
+              <div className="w-full">
+                <Button size={"lg"} className=" w-full ">
+                  Add to Cart
+                </Button>
+              </div>
+            </div>
+            <div className="flex gap-2 mt-4 items-center">
               <p className="text-sm md:text-base">Share This</p>
               <div className="flex gap-2">
                 <Image
@@ -186,9 +233,11 @@ const ProductInfo = () => {
                 />
               </div>
             </div>
+
           </div>
         </div>
-      </div>
+      }
+
     </>
   );
 };

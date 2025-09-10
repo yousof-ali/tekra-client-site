@@ -37,14 +37,16 @@ const ProductCard = ({ product }) => {
       {/* Image Wrapper */}
       <div className="w-full  relative sm:p-8 p-4 flex justify-center items-center bg-white">
         <div className=" h-42 w-42">
-          <Image
-          alt="Product Image"
-          src={image}
-          width={200}
-          height={200}
-          quality={100}
-          className="h-full w-full "
-        />
+          <Link href={`/shop/${product._id}`}>
+            <Image
+              alt="Product Image"
+              src={image}
+              width={200}
+              height={200}
+              quality={100}
+              className="h-full w-full "
+            />
+          </Link>
         </div>
         <div className="absolute flex flex-col space-y-3 right-5 opacity-0 translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
           <span className="p-2 bg-gray-200 cursor-pointer rounded-md">
@@ -52,9 +54,8 @@ const ProductCard = ({ product }) => {
           </span>
           <span
             onClick={() => handleWishlist(id)}
-            className={`p-2 rounded-md cursor-pointer ${
-              wishlist.includes(id) ? "bg-[#1867d6] text-white" : "bg-gray-200"
-            }`}
+            className={`p-2 rounded-md cursor-pointer ${wishlist.includes(id) ? "bg-[#1867d6] text-white" : "bg-gray-200"
+              }`}
           >
             <Heart className="h-5 w-5" />
           </span>
@@ -77,7 +78,7 @@ const ProductCard = ({ product }) => {
 
         {/* Product Name */}
         <Link
-          href={`/shop/${id}`}
+          href={`/shop/${product?._id}`}
           className="text-gray-600 cursor-pointer duration-400 hover:text-[#1867d6] font-semibold text-sm line-clamp-2"
         >
           {name}
@@ -90,7 +91,7 @@ const ProductCard = ({ product }) => {
               ${originalPrice}
             </span>
           )}
-          <span className="text-red-600 font-semibold">${price ? (Array.isArray(price) ? price[0] : price):""}</span>
+          <span className="text-red-600 font-semibold">${price ? (Array.isArray(price) ? price[0] : price) : ""}</span>
         </div>
 
         {/* Add to Cart button */}

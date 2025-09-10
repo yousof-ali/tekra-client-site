@@ -6,12 +6,13 @@ import playstore from '@/asset/homeImages/playstore.png'
 import applestore from '@/asset/homeImages/applestore.png'
 import campaign from "@/asset/homeImages/campaign-1.jpg"
 import campaign2 from "@/asset/homeImages/campaign-2.jpg"
+import { MoveRight } from "lucide-react";
 
 const FlashSale = () => {
   return (
     <section className="mt-8 lg:mt-16">
       <div className="flex max-w-7xl mx-auto gap-8 px-4 flex-col lg:flex-row">
-        <div className="border p-8 lg:p-12 w-full lg:w-1/2 flex flex-col justify-center"
+        <div className="border rounded-md p-8 lg:p-12 w-full lg:w-1/2 flex flex-col justify-center"
         style={{ backgroundImage: `url(${campaign.src})` }}>
           {/* Countdown Timer */}
           <div className="grid grid-cols-4  gap-4 mb-8">
@@ -43,26 +44,14 @@ const FlashSale = () => {
           </h1>
 
           {/* Shop Now Button */}
-          <Button className="w-fit bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-lg font-medium flex items-center gap-2 mb-8">
+          <Button size={"sm"} className={"max-w-[40%]"} >
             Shop Now
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+            <MoveRight/>
           </Button>
         </div>
 
         {/* Right Section - Mobile App */}
-        <div className="border w-full lg:w-1/2  p-8 lg:p-12 flex flex-col justify-center"
+        <div className="border w-full rounded-md lg:w-1/2  p-8 lg:p-12 flex flex-col justify-center"
         style={{ backgroundImage: `url(${campaign2.src})` }}>
           {/* Mobile App Version Label */}
           <div className="text-xs sm:text-sm font-semibold text-gray-600 mb-4 tracking-wide">

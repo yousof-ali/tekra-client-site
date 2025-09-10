@@ -3,8 +3,6 @@
 import { useQuery } from "@tanstack/react-query"
 import useAxiosPublic from "./useAxiosPublic"
 
-
-
 const useAllProducts = () => {
 
   const axiosPublic = useAxiosPublic();

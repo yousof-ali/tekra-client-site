@@ -11,15 +11,15 @@ const ProductCardThird = ({ product }) => {
     discount,
     rating,
     reviewCount,
-    images,
+    image,
     badge,
     inStock,
   } = product;
   return (
-    <div className="bg-white gap-2 items-center flex">
+    <div className="bg-white hover:shadow-md  duration-500 rounded-md gap-2 items-center flex">
       <div className="p-4">
-        <Image
-          src={images}
+        <Image 
+          src={image}
           width={70}
           height={70}
           quality={100}
@@ -29,19 +29,19 @@ const ProductCardThird = ({ product }) => {
       <div>
         {/* Product Name */}
 
-        <Link href={`/shop/${id}`} className="text-gray-700 cursor-pointer duration-400 hover:text-[#276680] font-semibold text-sm md:text-base">
+        <Link href={`/shop/${product?._id}`} className="text-gray-700 cursor-pointer duration-400 hover:text-[#276680] font-semibold text-sm md:text-base">
           {name.length > 20 ? name.slice(0, 20) + "..." : name}
         </Link>
 
         {/* Price Section */}
-        <div className="mt-2 text-base md:text-lg">
+        <div className=" text-base md:text-lg">
           {originalPrice && (
             <span className="line-through text-gray-400 mr-2">
               ${originalPrice}
             </span>
           )}
 
-          <span className="text-red-600 font-semibold">${price}</span>
+          <span className="text-red-600 text-sm font-semibold">${price}</span>
         </div>
       </div>
     </div>

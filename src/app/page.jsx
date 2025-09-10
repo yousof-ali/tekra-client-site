@@ -17,18 +17,12 @@ const Home = () => {
     <div className="bg-[#f7f7f7]">
       <HeroSlider />
       <CategorySlider/>
-
-     
-
       <NewArrivals />
-
       <PromotionalAds1/>
-
       {/* <GamerWorld /> */}
+      <TopSelling />
 
-      {/* <TopSelling /> */}
-
-      <div className="mx-auto flex gap-4 md:gap-6 lg:gap-8 flex-col sm:flex-row max-w-7xl px-4">
+      {/* <div className="mx-auto flex gap-4 md:gap-6 lg:gap-8 flex-col sm:flex-row max-w-7xl px-4">
         <div className="w-full sm:w-1/2">
           <PromotionalAds2/>
         </div>
@@ -36,13 +30,12 @@ const Home = () => {
           <PromotionalAds2/>
         </div>
 
-      </div>
+      </div> */}
 
       {/* <PopularSales /> */}
 
-      <FlashSale />
-
       <PopularSaleSecond />
+      <FlashSale />
        <AllBrands />
       
       <Features/>
