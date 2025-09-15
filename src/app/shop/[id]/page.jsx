@@ -17,6 +17,8 @@ const SinglePage = () => {
 
       <DescriptionTabs />
 
+      
+
       {/* related product section  */}
        
       <RelatedProducts/>

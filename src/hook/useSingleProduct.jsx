@@ -1,24 +1,29 @@
-// hooks/useSingleProduct.ts
-"use client";
+"use client"
+
+import { useQuery } from "@tanstack/react-query"
+import useAxiosPublic from "./useAxiosPublic"
 import { useParams } from "next/navigation";
-import { useMemo } from "react";
-import { Products, Reviews } from "@/utils/utils";
-import useAllProducts from "./useAllProduct";
 
-const useSingleProduct = () => {
+const useSIngleProduct = () => {
+
+  const axiosPublic = useAxiosPublic({});
   const { id } = useParams();
-  const productId = Number(id);
-  const [data,loading] = useAllProducts()
 
-  const singleProduct = useMemo(() => {
-    return data.find((product) => product.id === productId);
-  }, [productId]);
-
-  const review = useMemo(() => {
-    return Reviews.filter((rev) => rev.id === productId);
-  }, [productId]);
-
-  return { singleProduct, review,loading };
+  const {
+    data:product = {},
+    isLoading,
+    isError,
+    error,
+    refetch
+  } = useQuery({
+    queryKey:['product',id],
+    queryFn:async() => {
+      const res = await axiosPublic.get(`/product/${id}`);
+      return res.data
+    },
+    enabled: !!id,
+  });
+  return{product,isLoading,isError,error,refetch};
 };
 
-export default useSingleProduct;
+export default useSIngleProduct;

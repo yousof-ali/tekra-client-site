@@ -21,29 +21,13 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import ProductInfoSkeleton from "../productInfoSkeleton";
+import useSIngleProduct from "@/hook/useSingleProduct";
 
 
 const ProductInfo = () => {
 
-  const axiosPublic = useAxiosPublic();
-  const { id } = useParams();
-
-  const {
-    data: product = {},
-    isLoading,
-    error,
-    refetch
-  } = useQuery({
-    queryKey: ['product', id],
-    queryFn: async () => {
-      if (!id) return null;
-      const res = await axiosPublic.get(`/product/${id}`);
-      return res.data
-    },
-    enabled: !!id,
-  });
-
-
+  const {product,isLoading,isError,error,refetch} = useSIngleProduct()
+  
   const rating = product?.rating ?? 0;
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 >= 0.5;
@@ -146,9 +130,9 @@ const ProductInfo = () => {
                 </span>
               )}
 
-              <span className="text-red-600 text-xl font-semibold">
+              {/* <span className="text-red-600 text-xl font-semibold">
                 ${typeof product?.price === 'object' ? product.price[0] : product.price}
-              </span>
+              </span> */}
             </div>
 
             <p className="text-xs mt-3 lg:mt-6 lg:text-base text-gray-600 md:text-sm">
