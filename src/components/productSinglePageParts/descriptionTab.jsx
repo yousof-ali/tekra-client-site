@@ -12,7 +12,7 @@ import toast from "react-hot-toast";
 const DescriptionTabs = () => {
   const [isActive, setIsActive] = useState(1);
   const [reviewStar, setReviewStar] = useState(0);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [visibleReviews, setVisibleReviews] = useState(1);
 
   const { product, isLoading } = useSIngleProduct();
@@ -36,13 +36,12 @@ const DescriptionTabs = () => {
     { id: 2, label: "Reviews" },
   ];
 
-
   const handleReviewSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
 
     if (reviewStar < 1) {
-      setError('Please select star !');
+      setError("Please select star !");
       return;
     }
 
@@ -61,12 +60,11 @@ const DescriptionTabs = () => {
         e.target.reset();
         setReviewStar(0);
         toast.success("Review submitted successfully!");
-      };
+      }
     } catch (err) {
       toast.success(err.message);
     }
   };
-
 
   return (
     <div className="bg-gray-100 py-6 mt-16">
@@ -76,8 +74,9 @@ const DescriptionTabs = () => {
             <li
               key={tab.id}
               onClick={() => setIsActive(tab.id)}
-              className={`${isActive === tab.id && "!border-[#276680] !text-black"
-                } border-b border-transparent cursor-pointer px-2 lg:px-6 py-2 text-sm md:text-lg text-gray-500 transition`}
+              className={`${
+                isActive === tab.id && "!border-primary !text-black"
+              } border-b border-transparent cursor-pointer px-2 lg:px-6 py-2 text-sm md:text-lg text-gray-500 transition`}
             >
               {tab.label}
             </li>
@@ -129,7 +128,9 @@ const DescriptionTabs = () => {
                           <h4 className="text-gray-800 text-xs md:text-sm">
                             {rev.name}
                           </h4>
-                          <p className="text-[10px] md:text-xs">{rev.country}</p>
+                          <p className="text-[10px] md:text-xs">
+                            {rev.country}
+                          </p>
                         </div>
                       </div>
                       <div>
@@ -156,7 +157,10 @@ const DescriptionTabs = () => {
               {/* Load More Button */}
               {visibleReviews < reviews.length && (
                 <div className="flex justify-center my-6 lg:my-16">
-                  <Button size="sm" onClick={() => setVisibleReviews(reviews.length)}>
+                  <Button
+                    size="sm"
+                    onClick={() => setVisibleReviews(reviews.length)}
+                  >
                     Load More
                   </Button>
                 </div>
@@ -164,31 +168,50 @@ const DescriptionTabs = () => {
 
               {/* Review Form */}
               <form onSubmit={handleReviewSubmit} className="mt-6  space-y-4">
-                <h2 className="text-xs sm:text-sm mt-12 text-gray-800 font-semibold uppercase mb-2">Write Your Review</h2>
+                <h2 className="text-xs sm:text-sm mt-12 text-gray-800 font-semibold uppercase mb-2">
+                  Write Your Review
+                </h2>
                 <hr />
                 <div className="space-x-2">
                   {[...Array(5)].map((_, j) => (
                     <span
                       onClick={() => setReviewStar(j + 1)}
                       key={j}
-                      className={`cursor-pointer text-2xl sm:text-3xl ${reviewStar > j ? "text-yellow-400" : "text-gray-500"
-                        }`}
+                      className={`cursor-pointer text-2xl sm:text-3xl ${
+                        reviewStar > j ? "text-yellow-400" : "text-gray-500"
+                      }`}
                     >
                       ★
                     </span>
                   ))}
-                  {
-                    error && <p className="text-red-500 text-xs">{error}</p>
-                  }
+                  {error && <p className="text-red-500 text-xs">{error}</p>}
                 </div>
                 <div className="flex flex-col  sm:flex-row sm:gap-3">
                   <div className="flex sm:w-1/2 w-full flex-col gap-1">
-                    <label className="text-xs sm:text-sm" htmlFor="name">Name *</label>
-                    <input id="name" name="name" required className=" border rounded-md bg-white p-3 lg:p-4 text-xs sm:text-sm " placeholder="Enter your name" type="text" />
+                    <label className="text-xs sm:text-sm" htmlFor="name">
+                      Name *
+                    </label>
+                    <input
+                      id="name"
+                      name="name"
+                      required
+                      className=" border rounded-md bg-white p-3 lg:p-4 text-xs sm:text-sm "
+                      placeholder="Enter your name"
+                      type="text"
+                    />
                   </div>
                   <div className="flex sm:w-1/2 w-full flex-col sm:mt-0 mt-4 gap-1">
-                    <label className="text-xs sm:text-sm" htmlFor="country">Country *</label>
-                    <input id="country" name="country" required className=" border rounded-md bg-white p-3 lg:p-4 text-xs sm:text-sm " placeholder="Country" type="text" />
+                    <label className="text-xs sm:text-sm" htmlFor="country">
+                      Country *
+                    </label>
+                    <input
+                      id="country"
+                      name="country"
+                      required
+                      className=" border rounded-md bg-white p-3 lg:p-4 text-xs sm:text-sm "
+                      placeholder="Country"
+                      type="text"
+                    />
                   </div>
                 </div>
 

@@ -83,7 +83,7 @@ export default function MobileMenu({ isOpen, onClose }) {
                 <div key={index}>
                   <div
                     onClick={toggleSubmenu}
-                    className="flex duration-300 cursor-pointer text-sm text-gray-500 w-full py-3 px-4 justify-between items-center hover:bg-[#276680] hover:text-white"
+                    className="flex duration-300 cursor-pointer text-sm text-gray-500 w-full py-3 px-4 justify-between items-center hover:bg-primary hover:text-white"
                   >
                     <p>{category.mainManu}</p>
                     <ChevronDown
@@ -107,8 +107,8 @@ export default function MobileMenu({ isOpen, onClose }) {
                           className={`flex w-full gap-2 text-sm py-3 px-6 items-center 
                             ${
                               isActive
-                                ? "bg-[#276680] text-white"
-                                : "hover:bg-[#276680] hover:text-white"
+                                ? "bg-primary text-white"
+                                : "hover:bg-primary hover:text-white"
                             }`}
                         >
                           <SubIcon className="w-4 h-4" />
@@ -129,8 +129,8 @@ export default function MobileMenu({ isOpen, onClose }) {
                 className={`flex duration-300 cursor-pointer text-sm w-full py-3 px-4 gap-2 items-center 
                   ${
                     isActive
-                      ? "bg-[#276680] text-white"
-                      : "hover:bg-[#276680] hover:text-white"
+                      ? "bg-primary text-white"
+                      : "hover:bg-primary hover:text-white"
                   }`}
               >
                 <Icon className="w-4" />

@@ -21,8 +21,9 @@ const DashboardMenu = () => {
         <div
           title="Toggle Menu"
           onClick={() => setOpenMenu(!openMenu)}
-          className={`flex text-gray-500 ${openMenu ? "justify-between" : "justify-center"
-            } items-center px-2 py-3`}
+          className={`flex text-gray-500 ${
+            openMenu ? "justify-between" : "justify-center"
+          } items-center px-2 py-3`}
         >
           {openMenu ? (
             <>
@@ -44,14 +45,16 @@ const DashboardMenu = () => {
                 <Link
                   href={item?.href}
                   className={`rounded-none py-3 px-2 duration-300 block cursor-pointer
-                  ${isActive
-                      ? "bg-[#276680] text-white"
-                      : "hover:bg-[#276680] hover:text-white"
-                    }`}
+                  ${
+                    isActive
+                      ? "bg-primary text-white"
+                      : "hover:bg-primary hover:text-white"
+                  }`}
                 >
                   <div
-                    className={`flex items-center ${!openMenu && "justify-center"
-                      } gap-3 text-xs lg:text-sm`}
+                    className={`flex items-center ${
+                      !openMenu && "justify-center"
+                    } gap-3 text-xs lg:text-sm`}
                   >
                     <Icon className="h-5 w-5" />
                     {openMenu && <p>{item?.text}</p>}
@@ -63,7 +66,6 @@ const DashboardMenu = () => {
         </ul>
       </div>
     </>
-
   );
 };
 

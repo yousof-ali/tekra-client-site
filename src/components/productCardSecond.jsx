@@ -3,15 +3,8 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 
 const ProductCardSecond = ({ product }) => {
-  const {
-    name,
-    category,
-    price,
-    originalPrice,
-    discount,
-    rating,
-    image,
-  } = product;
+  const { name, category, price, originalPrice, discount, rating, image } =
+    product;
   return (
     <div className="bg-white group rounded-md shadow-xs items-center flex relative  overflow-hidden">
       {/* Image Wrapper with fixed size */}
@@ -38,7 +31,7 @@ const ProductCardSecond = ({ product }) => {
         </div>
 
         {/* Product Name */}
-        <p className="text-gray-700 cursor-pointer duration-400 hover:text-[#276680] font-semibold text-sm md:text-base line-clamp-2">
+        <p className="text-gray-700 cursor-pointer duration-400 hover:text-primary font-semibold text-sm md:text-base line-clamp-2">
           {name}
         </p>
 
@@ -49,7 +42,9 @@ const ProductCardSecond = ({ product }) => {
               ${originalPrice}
             </span>
           )}
-          <span className="text-red-600 font-semibold">${price ? (Array.isArray(price) ? price[0] : price) : ""}</span>
+          <span className="text-red-600 font-semibold">
+            ${price ? (Array.isArray(price) ? price[0] : price) : ""}
+          </span>
         </div>
 
         <div className="mt-4">

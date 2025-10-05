@@ -19,27 +19,27 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
 import ProductInfoSkeleton from "../productInfoSkeleton";
 import useSIngleProduct from "@/hook/useSingleProduct";
 
-
 const ProductInfo = () => {
+  const { product, isLoading, isError, error, refetch } = useSIngleProduct();
 
-  const {product,isLoading,isError,error,refetch} = useSIngleProduct()
-  
   const rating = product?.rating ?? 0;
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 >= 0.5;
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
-  const [color, setColor] = useState("")
-  const [storage, setStorage] = useState("")
+  const [color, setColor] = useState("");
+  const [storage, setStorage] = useState("");
 
   return (
     <>
-      {
-        isLoading ? <ProductInfoSkeleton /> : <div className="mx-4 flex flex-col my-8 gap-12 md:flex-row">
+      {isLoading ? (
+        <ProductInfoSkeleton />
+      ) : (
+        <div className="mx-4 flex flex-col my-8 gap-12 md:flex-row">
           <div className="w-full lg:w-1/2">
             <div className="border relative rounded-md">
               <Image
@@ -85,9 +85,7 @@ const ProductInfo = () => {
                         </DialogDescription>
                       </DialogHeader>
 
-                      <DialogFooter className="sm:justify-start">
-
-                      </DialogFooter>
+                      <DialogFooter className="sm:justify-start"></DialogFooter>
                     </DialogContent>
                   </Dialog>
                 );
@@ -105,17 +103,21 @@ const ProductInfo = () => {
 
             <div className="flex items-center space-x-2 ">
               <div className="flex items-center">
-
                 {[...Array(fullStars)].map((_, i) => (
-                  <span key={i} className="text-yellow-500 text-xl">★</span>
+                  <span key={i} className="text-yellow-500 text-xl">
+                    ★
+                  </span>
                 ))}
 
-                {hasHalfStar && <span className="text-yellow-500 text-xl">☆</span>}
+                {hasHalfStar && (
+                  <span className="text-yellow-500 text-xl">☆</span>
+                )}
 
                 {[...Array(emptyStars)].map((_, i) => (
-                  <span key={i} className="text-gray-300 text-xl">★</span>
+                  <span key={i} className="text-gray-300 text-xl">
+                    ★
+                  </span>
                 ))}
-
               </div>
 
               <span className="text-xs text-gray-500 lg:text-sm">
@@ -140,14 +142,23 @@ const ProductInfo = () => {
             </p>
 
             <div className="mt-3 lg:mt-5">
-              <h2 className="text-xs lg:text-sm  font-semibold uppercase mb-2">COLOR</h2>
+              <h2 className="text-xs lg:text-sm  font-semibold uppercase mb-2">
+                COLOR
+              </h2>
               <div className="flex flex-wrap gap-2">
-                {
-                  product?.colors?.map((col, indx) => {
-                    return (<div onClick={() => setColor(col)} key={indx} className={`border ${col === color ? "bg-[#276680] text-white" : ""} text-xs p-2 text-gray-500 cursor-pointer lg:text-sm rounded`}>{col}</div>)
-                  })
-                }
-
+                {product?.colors?.map((col, indx) => {
+                  return (
+                    <div
+                      onClick={() => setColor(col)}
+                      key={indx}
+                      className={`border ${
+                        col === color ? "bg-primary text-white" : ""
+                      } text-xs p-2 text-gray-500 cursor-pointer lg:text-sm rounded`}
+                    >
+                      {col}
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -161,8 +172,9 @@ const ProductInfo = () => {
                     <div
                       onClick={() => setStorage(stor)}
                       key={indx}
-                      className={`border ${storage === stor ? "bg-[#276680] text-white" : ""
-                        } text-xs p-2 cursor-pointer text-gray-500 lg:text-sm rounded`}
+                      className={`border ${
+                        storage === stor ? "bg-primary text-white" : ""
+                      } text-xs p-2 cursor-pointer text-gray-500 lg:text-sm rounded`}
                     >
                       {stor}
                     </div>
@@ -172,15 +184,23 @@ const ProductInfo = () => {
             )}
 
             <div className="mt-3 lg:mt-5">
-              <h2 className="text-xs lg:text-sm  font-semibold uppercase mb-2">Status</h2>
-              <p className="text-xs text-gray-500 lg:text-sm">{product?.inStock ? "In Stock" : "Stock Out"}</p>
+              <h2 className="text-xs lg:text-sm  font-semibold uppercase mb-2">
+                Status
+              </h2>
+              <p className="text-xs text-gray-500 lg:text-sm">
+                {product?.inStock ? "In Stock" : "Stock Out"}
+              </p>
             </div>
 
             <div className="flex mt-4 lg:mt-7 gap-2 sm:gap-4 justify-between">
               <div className="border  flex items-center text-lg justify-center">
-                <Button className={"h-full  rounded-none"}><Plus /></Button>
+                <Button className={"h-full  rounded-none"}>
+                  <Plus />
+                </Button>
                 <span className=" px-2 lg:px-4">17</span>
-                <Button className={"h-full rounded-none"} ><Minus /></Button>
+                <Button className={"h-full rounded-none"}>
+                  <Minus />
+                </Button>
               </div>
               <div className="w-full">
                 <Button size={"lg"} className=" w-full ">
@@ -217,11 +237,9 @@ const ProductInfo = () => {
                 />
               </div>
             </div>
-
           </div>
         </div>
-      }
-
+      )}
     </>
   );
 };

@@ -40,9 +40,12 @@ const ResetPassword = () => {
           </div>
 
           <div className="mt-6">
-            <input className="bg-[#276680] py-3 w-full text-white text-sm md:text-base" type="submit" value={"Update Password"} />
+            <input
+              className="bg-primary py-3 w-full text-white text-sm md:text-base"
+              type="submit"
+              value={"Update Password"}
+            />
           </div>
-
         </form>
       </div>
     </>

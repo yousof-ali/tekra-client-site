@@ -1,158 +1,122 @@
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-} from "@/components/ui/select";
+"use client";
+
+import SocialLogins from "@/components/socialLogins/socialLogins";
+import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
-import image from "@/asset/registerImages/register.png"
-import Image from "next/image";
-import Discount from "@/components/shopParts/discount";
-
-
+import { useState } from "react";
 
 const Register = () => {
+  const [shwpass, setShowpass] = useState(false);
+  const [shwConfirmpass, setShowconfirmpass] = useState(false);
+
   return (
-    
-      <div className=" bg-gray-100 ">
-        <div className="max-w-7xl flex gap-6 py-12  flex-col md:flex-row mx-auto items-center px-2 ">
-          <div className="w-full py-8 lg:px-12 px-6 border bg-white md:w-1/2">
-            <h2 className="text-2xl md:text-3xl text-center font-semibold">
-              Create Account
-            </h2>
+    <div className=" bg-white min-h-screen flex items-center justify-center">
+      <div className="sm:w-[450px] lg:w-[500px] w-full py-8 md:px-8 lg:px-12 mx-4 lg:mx-0 px-6  rounded-md  ">
+        <h2 className="text-xl font-semibold">Create Account</h2>
 
-            <form className="pt-6" action="">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="text-xs w-full sm:w-1/2 flex flex-col gap-1">
-                  <label className="text-gray-600" htmlFor="fname">
-                    First Name*
-                  </label>
-                  <input
-                    id="fname"
-                    type="text"
-                    className="outline-0 border p-3"
-                    placeholder="Enter Your Name"
-                  />
-                </div>
-                <div className="text-xs w-full sm:w-1/2 flex flex-col gap-1">
-                  <label className="text-gray-600" htmlFor="lname">
-                    Last Name*
-                  </label>
-                  <input
-                    type="text"
-                    id="lname"
-                    className="outline-0 border p-3"
-                    placeholder="Enter Your Last Name"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-col mt-4  sm:flex-row gap-4">
-                <div className="text-xs w-full sm:w-1/2 flex flex-col gap-1">
-                  <label className="text-gray-600" htmlFor="email">
-                    Email Address*
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    className="outline-0 border p-3"
-                    placeholder="Enter Your Email"
-                  />
-                </div>
-                <div className="text-xs w-full sm:w-1/2 flex flex-col gap-1">
-                  <label className="text-gray-600" htmlFor="phone">
-                    Phone*
-                  </label>
-                  <input
-                    type="text"
-                    id="phone"
-                    className="outline-0 border p-3"
-                    placeholder="Enter Your Phone"
-                  />
-                </div>
-              </div>
-              <div className="text-xs flex flex-col gap-1 mt-4">
-                <label htmlFor="country" className="text-gray-600">
-                  Country
-                </label>
-                <Select defaultValue="name-asc">
-                  <SelectTrigger className="w-full rounded-none outline-0 shadow-none border py-5">
-                    Select Country
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="usa">USA</SelectItem>
-                    <SelectItem value="bangladesh">Bangladesh</SelectItem>
-                    <SelectItem value="india">India</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <div className="text-xs flex flex-col gap-1 mt-4">
-                <label htmlFor="address" className="text-gray-600">
-                  Address
-                </label>
-                <input
-                  id="address"
-                  type="email"
-                  className="outline-0 border p-3"
-                  placeholder="Enter Your address"
-                />
-              </div>
-
-              <div className="flex flex-col mt-4  sm:flex-row gap-4">
-                <div className="text-xs w-full sm:w-1/2 flex flex-col gap-1">
-                  <label className="text-gray-600" htmlFor="city">
-                    Town / City*
-                  </label>
-                  <Select defaultValue="name-asc">
-                    <SelectTrigger className="w-full rounded-none outline-0 shadow-none border py-5">
-                      Select City
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="usa">USA</SelectItem>
-                      <SelectItem value="bangladesh">Bangladesh</SelectItem>
-                      <SelectItem value="india">India</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div className="text-xs w-full sm:w-1/2 flex flex-col gap-1">
-                  <label className="text-gray-600" htmlFor="postcode">
-                    Postcode / Zip*
-                  </label>
-                  <input
-                    type="text"
-                    id="postcode"
-                    className="outline-0 border p-3"
-                    placeholder="000000"
-                  />
-                </div>
-              </div>
-              <div className="my-8 text-gray-500 flex items-center gap-2">
-                <input id="term" type="checkbox" />
-                <label htmlFor="term">I agree allterms and condition ShopO.</label>
-              </div>
-              <div>
-                <input type="submit" value={"Create Account"} className="bg-black text-white w-full py-3" />
-              </div>
-
-              <div className="mt-4 flex items-center justify-center text-gray-500  gap-2">
-                
-                <p className="text-gray-400">Already have an Account?</p>
-                <Link className="text-black" href={"/login"}>Log In</Link>
-              </div>
-              
-            </form>
+        <form className="pt-6" action="">
+          
+          {/* name  */}
+          <div className="lg:text-sm text-xs flex flex-col gap-1 ">
+            <label htmlFor="name" className="text-gray-600">
+              Full Name*
+            </label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              className="outline-0 border rounded-md p-3"
+              placeholder="Enter your name"
+              required
+            />
           </div>
-          <div className="w-full md:w-1/2">
-          <Image
-          src={image}
-          alt="register"
-          className="w-full"
-          />
+
+          {/* email  */}
+          <div className="lg:text-sm text-xs flex flex-col lg:mt-5 gap-1 mt-4">
+            <label htmlFor="email" className="text-gray-600">
+              Email Address*
+            </label>
+            <input
+              id="email"
+              type="email"
+              className="outline-0 border rounded-md p-3"
+              placeholder="Enter your email"
+              name="email"
+              required
+            />
           </div>
+
+          {/* password  */}
+          <div className="lg:text-sm text-xs flex relative flex-col lg:mt-5 gap-1 mt-4">
+            <label htmlFor="password" className="text-gray-600">
+              Password*
+            </label>
+            <input
+              id="password"
+              type={shwpass ? "text" : "password"}
+              className="outline-0 border rounded-md p-3"
+              placeholder="Password"
+              name="password"
+              required
+            />
+            <div
+              onClick={() => setShowpass(!shwpass)}
+              className="absolute right-3 lg:top-9 top-7 cursor-pointer"
+            >
+              {shwpass ? (
+                <EyeOff className="text-gray-600" />
+              ) : (
+                <Eye className="text-gray-600" />
+              )}
+            </div>
+          </div>
+
+          {/* confirm password  */}
+          <div className="lg:text-sm relative text-xs flex flex-col gap-1 lg:mt-5 mt-4">
+            <label htmlFor="email" className="text-gray-600">
+              Confirm Password*
+            </label>
+            <input
+              id="cpassword"
+              type={shwConfirmpass ? "text" : "password"}
+              name="cpassword"
+              className="outline-0 border rounded-md p-3"
+              placeholder="Confirm password"
+              required
+            />
+            <div
+              onClick={() => setShowconfirmpass(!shwConfirmpass)}
+              className="absolute right-3 top-7 lg:top-9 cursor-pointer"
+            >
+              {shwConfirmpass ? (
+                <EyeOff className="text-gray-600" />
+              ) : (
+                <Eye className="text-gray-600" />
+              )}
+            </div>
+          </div>
+
+          <div className="my-5 text-gray-500  text-xs lg:text-sm flex items-center gap-2">
+            <input id="term" type="checkbox" />
+            <label htmlFor="term ">I agree allterms and condition TEKRA.</label>
+          </div>
+          <div>
+            <input
+              type="submit"
+              value={"Create Account"}
+              className="bg-primary cursor-pointer text-white rounded-md w-full py-3"
+            />
+          </div>
+        </form>
+        <SocialLogins/>
+        <div className="mt-4 flex  text-xs lg:text-sm  text-gray-500  gap-2">
+          <p className="text-gray-400 ">Already have an Account?</p>
+          <Link className="text-black underline" href={"/login"}>
+            Log In
+          </Link>
         </div>
-        <Discount />
-    
       </div>
-      
+    </div>
   );
 };
 

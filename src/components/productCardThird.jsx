@@ -18,18 +18,15 @@ const ProductCardThird = ({ product }) => {
   return (
     <div className="bg-white hover:shadow-md  duration-500 rounded-md gap-2 items-center flex">
       <div className="p-4">
-        <Image 
-          src={image}
-          width={70}
-          height={70}
-          quality={100}
-          alt="product"
-        />
+        <Image src={image} width={70} height={70} quality={100} alt="product" />
       </div>
       <div>
         {/* Product Name */}
 
-        <Link href={`/shop/${product?._id}`} className="text-gray-700 cursor-pointer duration-400 hover:text-[#276680] font-semibold text-sm md:text-base">
+        <Link
+          href={`/shop/${product?._id}`}
+          className="text-gray-700 cursor-pointer duration-400 hover:text-primary font-semibold text-sm md:text-base"
+        >
           {name.length > 20 ? name.slice(0, 20) + "..." : name}
         </Link>
 

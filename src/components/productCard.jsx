@@ -54,8 +54,9 @@ const ProductCard = ({ product }) => {
           </span>
           <span
             onClick={() => handleWishlist(id)}
-            className={`p-2 rounded-md cursor-pointer ${wishlist.includes(id) ? "bg-[#1867d6] text-white" : "bg-gray-200"
-              }`}
+            className={`p-2 rounded-md cursor-pointer ${
+              wishlist.includes(id) ? "bg-primary text-white" : "bg-gray-200"
+            }`}
           >
             <Heart className="h-5 w-5" />
           </span>
@@ -79,7 +80,7 @@ const ProductCard = ({ product }) => {
         {/* Product Name */}
         <Link
           href={`/shop/${product?._id}`}
-          className="text-gray-600 cursor-pointer duration-400 hover:text-[#1867d6] font-semibold text-sm line-clamp-2"
+          className="text-gray-600 cursor-pointer duration-400 hover:text-primary font-semibold text-sm line-clamp-2"
         >
           {name}
         </Link>
@@ -91,7 +92,9 @@ const ProductCard = ({ product }) => {
               ${originalPrice}
             </span>
           )}
-          <span className="text-red-600 font-semibold">${price ? (Array.isArray(price) ? price[0] : price) : ""}</span>
+          <span className="text-red-600 font-semibold">
+            ${price ? (Array.isArray(price) ? price[0] : price) : ""}
+          </span>
         </div>
 
         {/* Add to Cart button */}

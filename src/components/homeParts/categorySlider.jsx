@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { FreeMode, Navigation } from 'swiper/modules';
-import { TopCategories } from '@/utils/utils';
-import Image from 'next/image';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { FreeMode, Navigation } from "swiper/modules";
+import { TopCategories } from "@/utils/utils";
+import Image from "next/image";
 
 const CategorySlider = () => {
   return (
@@ -15,43 +15,43 @@ const CategorySlider = () => {
       <button
         className="swiper-button-prev-custom absolute left-1 top-1/2 z-10 transform -translate-y-1/2 
                    bg-white shadow-md border rounded-full w-8 h-8 flex items-center justify-center
-                   hover:bg-[#276680] hover:text-white transition-all duration-300"
+                   hover:bg-primary hover:text-white transition-all duration-300"
       >
         ‹
       </button>
       <button
         className="swiper-button-next-custom absolute right-1 top-1/2 z-10 transform -translate-y-1/2 
                    bg-white shadow-md border rounded-full w-8 h-8 flex items-center justify-center
-                   hover:bg-[#276680] hover:text-white transition-all duration-300"
+                   hover:bg-primary hover:text-white transition-all duration-300"
       >
         ›
       </button>
 
       <Swiper
         freeMode={true}
-        centeredSlides={true}          // keeps active slide centered
-        centeredSlidesBounds={true}    // ensures first/last slide align nicely
+        centeredSlides={true} // keeps active slide centered
+        centeredSlidesBounds={true} // ensures first/last slide align nicely
         modules={[FreeMode, Navigation]}
         className="mySwiper"
         navigation={{
-          prevEl: '.swiper-button-prev-custom',
-          nextEl: '.swiper-button-next-custom',
+          prevEl: ".swiper-button-prev-custom",
+          nextEl: ".swiper-button-next-custom",
         }}
         breakpoints={{
           0: {
-            slidesPerView: 3,  
+            slidesPerView: 3,
             spaceBetween: 8,
           },
           500: {
-            slidesPerView: 4.5,  
+            slidesPerView: 4.5,
             spaceBetween: 15,
           },
           750: {
-            slidesPerView: 5.5,  
+            slidesPerView: 5.5,
             spaceBetween: 15,
           },
           1024: {
-            slidesPerView: 7.5,  
+            slidesPerView: 7.5,
             spaceBetween: 20,
           },
         }}
@@ -60,7 +60,7 @@ const CategorySlider = () => {
           <SwiperSlide key={indx} className="flex justify-center">
             <div
               className="border group rounded-md flex justify-center bg-white items-center flex-col 
-                         p-2 sm:p-3 py-2 md:py-4 transition-all duration-400 hover:border-[#276680] hover:shadow-xs"
+                         p-2 sm:p-3 py-2 md:py-4 transition-all duration-400 hover:border-primary hover:shadow-xs"
             >
               <Image
                 alt={category.name}
@@ -70,7 +70,7 @@ const CategorySlider = () => {
                 quality={100}
                 className="w-6 sm:w-12"
               />
-              <h3 className="text-[8px] group-hover:text-[#276680] text-gray-500 sm:text-xs text-center mt-2 md:mt-4 ">
+              <h3 className="text-[8px] group-hover:text-primary text-gray-500 sm:text-xs text-center mt-2 md:mt-4 ">
                 {category.name}
               </h3>
             </div>

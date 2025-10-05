@@ -64,7 +64,7 @@ const OrderTracking = () => {
               
                 <Button
                   type="button"
-                  className="w-full bg-[#276680] text-white py-2 rounded cursor-pointer mt-3"
+                  className="w-full bg-primary text-white py-2 rounded cursor-pointer mt-3"
                 >
                   Track Now
                 </Button>

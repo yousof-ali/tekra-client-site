@@ -32,6 +32,7 @@ const Cart = () => {
                 <th className="p-3 border-b">ACTION</th>
               </tr>
             </thead>
+
             <tbody>
               {Products?.slice(2, 5)?.map((product, indx) => (
                 <tr key={indx} className="text-gray-500  text-sm sm:text-base">
@@ -57,16 +58,12 @@ const Cart = () => {
                   <td className="p-3 border-b">${product.price}</td>
                   <td className="p-3 border-b">
                     <div className="flex items-center justify-center gap-2 border  max-w-fit">
-                      <Button
-                        className={"rounded-none"}
-                      >
-                        <Minus/>
+                      <Button className={"rounded-none"}>
+                        <Minus />
                       </Button>
                       <span className="mx-2">0</span>
-                      <Button
-                        className={"rounded-none"}
-                      >
-                        <Plus/>
+                      <Button className={"rounded-none"}>
+                        <Plus />
                       </Button>
                     </div>
                   </td>
@@ -164,7 +161,7 @@ const Cart = () => {
 
               {/* Checkout Button */}
               <div className="mt-4">
-                <Button variant="secondary" className="w-full "  size="lg">
+                <Button variant="secondary" className="w-full " size="lg">
                   Proceed to Checkout
                 </Button>
               </div>

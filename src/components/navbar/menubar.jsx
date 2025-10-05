@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import {
@@ -11,16 +11,16 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import { Button } from "@/components/ui/button";
-import {LogIn } from "lucide-react";
+import { LogIn } from "lucide-react";
 import { Navmenu } from "@/utils/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Menubar = () => {
-  const pathname = usePathname(); 
+  const pathname = usePathname();
 
   return (
-    <div className="bg-[#276680] hidden lg:block">
+    <div className="bg-primary hidden lg:block">
       <div className="flex items-center justify-between mx-auto max-w-7xl py-3 px-2">
         {/* Navigation Menu */}
         <NavigationMenu viewport={false}>
@@ -61,9 +61,7 @@ const Menubar = () => {
                         after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0 
                         after:bg-white  after:transition-all after:duration-300 
                         hover:after:w-full
-                        ${
-                          pathname === item.href ? "after:w-full" : ""
-                        }`}
+                        ${pathname === item.href ? "after:w-full" : ""}`}
                     >
                       {item.mainManu}
                     </Link>
@@ -75,8 +73,11 @@ const Menubar = () => {
         </NavigationMenu>
 
         {/* Right side */}
-        <Button variant={"outline"} className="bg-[#22657d] text-white  border-white">
-          Login <LogIn/>
+        <Button
+          variant={"outline"}
+          className="bg-[#22657d] text-white  border-white"
+        >
+          Login <LogIn />
         </Button>
       </div>
     </div>
