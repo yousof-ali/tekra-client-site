@@ -73,12 +73,14 @@ const Menubar = () => {
         </NavigationMenu>
 
         {/* Right side */}
+        <Link href={"/login"}>
         <Button
-          variant={"outline"}
-          className="bg-[#22657d] text-white  border-white"
+          variant={"secondary"}
+          className={"hover:border-white"}
         >
           Login <LogIn />
         </Button>
+        </Link>
       </div>
     </div>
   );

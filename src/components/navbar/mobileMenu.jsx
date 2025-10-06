@@ -143,7 +143,7 @@ export default function MobileMenu({ isOpen, onClose }) {
         {/* Bottom Button */}
         <div className="mx-2 mt-14 flex justify-end">
           <Link className="w-full" href={"/login"}>
-            <Button size="lg" className="w-full rounded-none">
+            <Button className="w-full ">
               Log In <LogIn />
             </Button>
           </Link>

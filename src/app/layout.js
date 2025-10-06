@@ -4,6 +4,7 @@ import "./globals.css";
 import QueryProvider from "@/providers/tanstackProvider";
 import { Toaster } from "react-hot-toast";
 import NavbarFooterWrapper from "@/components/navbar/navbarFooterWrapper";
+import AuthContext from "@/contextApi/authContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +17,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <QueryProvider>
+        <AuthContext>
+            <QueryProvider>
           <NavbarFooterWrapper>
             {children}
             <Toaster position="top-right" reverseOrder={false} />
           </NavbarFooterWrapper>
         </QueryProvider>
+        </AuthContext>
       </body>
     </html>
   );

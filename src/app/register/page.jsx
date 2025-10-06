@@ -1,21 +1,73 @@
 "use client";
 
+import LoadingSpinner from "@/components/loadingSpinner";
 import SocialLogins from "@/components/socialLogins/socialLogins";
-import { Eye, EyeOff } from "lucide-react";
+import useAuth from "@/hook/useAuth";
+import { CloudCog, Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
 const Register = () => {
   const [shwpass, setShowpass] = useState(false);
   const [shwConfirmpass, setShowconfirmpass] = useState(false);
+  const [error, setError] = useState("");
+  const { createUser } = useAuth();
+  const [buttonLoading, setButtonLoading] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError("");
+    setButtonLoading(true);
+
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirmPass = form.cpassword.value;
+
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_\-+=\[\]{};:'",.<>/?\\|`~]).+$/;
+
+    if (!emailRegex.test(email)) {
+      setError("Email not valid!");
+      setButtonLoading(false);
+      return;
+    }
+
+    if (!passwordRegex.test(password)) {
+      setError(
+        "Password must contain at least one uppercase, one lowercase, and one special character."
+      );
+      setButtonLoading(false);
+      return;
+    }
+
+    if (password !== confirmPass) {
+      setError("Password not matching!");
+      setButtonLoading(false);
+      return;
+    }
+
+    createUser(email, password)
+      .then((res) => {
+        if (res.user) {
+          console.log(res.user);
+          setButtonLoading(false);
+        }
+      })
+      .catch((err) => {
+        setError(err.message);
+        setButtonLoading(false);
+      });
+  };
 
   return (
     <div className=" bg-white min-h-screen flex items-center justify-center">
       <div className="sm:w-[450px] lg:w-[500px] w-full py-8 md:px-8 lg:px-12 mx-4 lg:mx-0 px-6  rounded-md  ">
         <h2 className="text-xl font-semibold">Create Account</h2>
 
-        <form className="pt-6" action="">
-          
+        <form className="pt-6" onSubmit={handleSubmit}>
           {/* name  */}
           <div className="lg:text-sm text-xs flex flex-col gap-1 ">
             <label htmlFor="name" className="text-gray-600">
@@ -97,18 +149,25 @@ const Register = () => {
           </div>
 
           <div className="my-5 text-gray-500  text-xs lg:text-sm flex items-center gap-2">
-            <input id="term" type="checkbox" />
-            <label htmlFor="term ">I agree allterms and condition TEKRA.</label>
+            <input id="term" type="checkbox" required />
+            <label htmlFor="term ">
+              I agree all terms and condition TEKRA.
+            </label>
           </div>
+
+          {error && <p className="text-xs mb-2 text-red-600">{error}</p>}
+
           <div>
-            <input
+            <button
               type="submit"
-              value={"Create Account"}
-              className="bg-primary cursor-pointer text-white rounded-md w-full py-3"
-            />
+              disabled={buttonLoading}
+              className="bg-primary cursor-pointer text-white rounded-md w-full py-3 flex justify-center items-center gap-2 disabled:opacity-80"
+            >
+              {buttonLoading ? <><LoadingSpinner /> Creating</> : "Create Account"}
+            </button>
           </div>
         </form>
-        <SocialLogins/>
+        <SocialLogins />
         <div className="mt-4 flex  text-xs lg:text-sm  text-gray-500  gap-2">
           <p className="text-gray-400 ">Already have an Account?</p>
           <Link className="text-black underline" href={"/login"}>

@@ -1,12 +1,14 @@
 "use client";
 
 import SocialLogins from "@/components/socialLogins/socialLogins";
-import { Button } from "@/components/ui/button";
+import useAuth from "@/hook/useAuth";
 import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
 const Login = () => {
+  const {name} = useAuth();
+  console.log(name)
   const [shwpass, setShowpass] = useState(false);
   return (
     <div className=" bg-white min-h-screen flex items-center justify-center">
