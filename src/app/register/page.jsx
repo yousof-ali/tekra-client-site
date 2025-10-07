@@ -3,9 +3,13 @@
 import LoadingSpinner from "@/components/loadingSpinner";
 import SocialLogins from "@/components/socialLogins/socialLogins";
 import useAuth from "@/hook/useAuth";
-import { CloudCog, Eye, EyeOff } from "lucide-react";
+import { updateProfile } from "firebase/auth";
+import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const Register = () => {
   const [shwpass, setShowpass] = useState(false);
@@ -13,6 +17,10 @@ const Register = () => {
   const [error, setError] = useState("");
   const { createUser } = useAuth();
   const [buttonLoading, setButtonLoading] = useState(false);
+  const { user } = useAuth();
+  const router = useRouter();
+
+  console.log(user);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,7 +38,7 @@ const Register = () => {
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_\-+=\[\]{};:'",.<>/?\\|`~]).+$/;
 
     if (!emailRegex.test(email)) {
-      setError("Email not valid!");
+      setError("Enter a valid email");
       setButtonLoading(false);
       return;
     }
@@ -52,8 +60,13 @@ const Register = () => {
     createUser(email, password)
       .then((res) => {
         if (res.user) {
-          console.log(res.user);
-          setButtonLoading(false);
+          updateProfile(res.user, {
+            displayName: name,
+          }).then((_) => {
+            setButtonLoading(false);
+            toast.success("Account create successfully");
+            router.push("/")
+          });
         }
       })
       .catch((err) => {
@@ -163,7 +176,13 @@ const Register = () => {
               disabled={buttonLoading}
               className="bg-primary cursor-pointer text-white rounded-md w-full py-3 flex justify-center items-center gap-2 disabled:opacity-80"
             >
-              {buttonLoading ? <><LoadingSpinner /> Creating</> : "Create Account"}
+              {buttonLoading ? (
+                <>
+                  <LoadingSpinner /> Creating
+                </>
+              ) : (
+                "Create Account"
+              )}
             </button>
           </div>
         </form>

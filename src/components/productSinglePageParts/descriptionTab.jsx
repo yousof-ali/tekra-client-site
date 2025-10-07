@@ -62,7 +62,7 @@ const DescriptionTabs = () => {
         toast.success("Review submitted successfully!");
       }
     } catch (err) {
-      toast.success(err.message);
+      toast.err(err.message);
     }
   };
 
